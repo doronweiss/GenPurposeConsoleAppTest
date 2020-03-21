@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PythonScriptDesc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <name>doron</name>
+  <buses>CAN</buses>
+  <dependencies>
+    <string>11111</string>
+    <string>22222</string>
+    <string>33333</string>
+  </dependencies>
+</PythonScriptDesc>
