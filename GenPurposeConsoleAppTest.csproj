@@ -133,6 +133,7 @@
     <Compile Include="ASyncTest.cs" />
     <Compile Include="BinWriterTest.cs" />
     <Compile Include="Bitvec32Tester.cs" />
+    <Compile Include="BitVector64Test.cs" />
     <Compile Include="BST.cs" />
     <Compile Include="CastTester.cs" />
     <Compile Include="CRC16.cs" />
