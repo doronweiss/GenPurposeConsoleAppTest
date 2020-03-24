@@ -27,19 +27,19 @@ namespace GenPurposeConsoleAppTest {
     }
 
     public static void Run() {
-//      const int arraySize = 20;
-//      int* fib = stackalloc int[arraySize];
-//      int* p = fib;
-//      // The sequence begins with 1, 1.
-//      *p++ = *p++ = 1;
-//      for (int i = 2; i < arraySize; ++i, ++p) {
-//        // Sum the previous two numbers.
-//        *p = p[-1] + p[-2];
-//      }
-//      for (int i = 0; i < arraySize; ++i) {
-//        Console.WriteLine(fib[i]);
-//      }
-//
+      //      const int arraySize = 20;
+      //      int* fib = stackalloc int[arraySize];
+      //      int* p = fib;
+      //      // The sequence begins with 1, 1.
+      //      *p++ = *p++ = 1;
+      //      for (int i = 2; i < arraySize; ++i, ++p) {
+      //        // Sum the previous two numbers.
+      //        *p = p[-1] + p[-2];
+      //      }
+      //      for (int i = 0; i < arraySize; ++i) {
+      //        Console.WriteLine(fib[i]);
+      //      }
+      //
       /*
             DateTime dt = DateTime.Now;
             Console.WriteLine ($"Now is - { FmtDT(dt)}");
@@ -84,7 +84,8 @@ namespace GenPurposeConsoleAppTest {
       //      for (int idx=0; idx<=100; idx++)
       //        pdfs.Add(bpdf(tmin+dx*idx));
       //      Console.WriteLine($"x=[{string.Join(",", pdfs)} ];");
-
+      double x = Math.PI;
+      Console.WriteLine($"{x}, {x:F3}, {x:F5}, {x:F15}");
     }
-    }
+  }
 }

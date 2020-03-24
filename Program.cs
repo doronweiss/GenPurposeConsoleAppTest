@@ -52,7 +52,8 @@ namespace GenPurposeConsoleAppTest {
       //EnumFileNameSupplier.Run();
       //SignChangeTest.Run();
       //BitVector64Test.Run();
-      LogGenerator.Run();
+      //LogGenerator.Run();
+      GeneralPurposeTests.Run();
     }
   }
 }
