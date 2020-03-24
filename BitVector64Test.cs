@@ -56,7 +56,7 @@ namespace GenPurposeConsoleAppTest {
         }
 #endif
         value <<= section.Offset;
-        int offsetMask = (0xFFFF & (int)section.Mask) << section.Offset;
+        long offsetMask = (0xFFFFFFFF & (int)section.Mask) << section.Offset;
         data = (data & ~(ulong)offsetMask) | ((ulong)value & (ulong)offsetMask);
       }
     }
@@ -111,7 +111,7 @@ namespace GenPurposeConsoleAppTest {
     /// </devdoc>
     private static ulong CreateMaskFromHighValue(ulong highValue) {
       ulong required = 16;
-      while ((highValue & 0x8000) == 0) {
+      while ((highValue & 0x80000000) == 0) {
         required--;
         highValue <<= 1;
       }
@@ -271,6 +271,18 @@ namespace GenPurposeConsoleAppTest {
       bv64[m5] = true;
 
       Console.WriteLine($"has: {bv64[m1]} {bv64[m2]} {bv64[m3]} {bv64[m4]} {bv64[m5]}");
+
+      BitVector64 bv2 = new BitVector64();
+      BitVector64.Section s1 = BitVector64.CreateSection(4);
+      BitVector64.Section s2 = BitVector64.CreateSection(2, s1);
+      BitVector64.Section s3 = BitVector64.CreateSection(2, s2);
+      BitVector64.Section s4 = BitVector64.CreateSection(1, s3);
+      BitVector64.Section s5 = BitVector64.CreateSection(1, s4);
+      BitVector64.Section s6 = BitVector64.CreateSection(6000000000, s5);
+
+      bv2[s1] = 3;
+      bv2[s6] = 3123456789;
+      Console.WriteLine($"has: {bv2[s1]} {bv2[s6]}");
     }
   }
 }

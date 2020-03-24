@@ -8,6 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Xml;
 using System.Xml.Serialization;
+using GenPurposeConsoleAppTest.WOB;
 
 namespace GenPurposeConsoleAppTest {
   class Program {
@@ -50,7 +51,8 @@ namespace GenPurposeConsoleAppTest {
       //DestructorTest.Run();
       //EnumFileNameSupplier.Run();
       //SignChangeTest.Run();
-      BitVector64Test.Run();
+      //BitVector64Test.Run();
+      LogGenerator.Run();
     }
   }
 }
