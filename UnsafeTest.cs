@@ -25,7 +25,22 @@ namespace GenPurposeConsoleAppTest {
         fpq[0] = fpq[1];
         fpq[1] = temp;
       }
-    }  
+    }
+
+    static unsafe void FiboExample() {
+      const int arraySize = 20;
+      int* fib = stackalloc int[arraySize];
+      int* p = fib;
+      // The sequence begins with 1, 1.
+      *p++ = *p++ = 1;
+      for (int i = 2; i < arraySize; ++i, ++p) {
+        // Sum the previous two numbers.
+        *p = p[-1] + p[-2];
+      }
+      for (int i = 0; i < arraySize; ++i) {
+        Console.WriteLine(fib[i]);
+      }
+    }
 
     public static void Run() {
       TestFunc("batata");
@@ -33,6 +48,7 @@ namespace GenPurposeConsoleAppTest {
       Console.WriteLine($"Array before: {tarr[0]}, {tarr[1]}");
       swap(tarr);
       Console.WriteLine($"Array after: {tarr[0]}, {tarr[1]}");
+      FiboExample();
     }
   }
 }

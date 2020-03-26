@@ -17,7 +17,6 @@ namespace GenPurposeConsoleAppTest {
       //
       //CSScripting.Run();
       //CSParallelism.Run();
-      //CSGeneral.Run();
       //RegexXMLSplitter.Run();
       //LinqTests.Run();
       //gpt.Run();
@@ -31,7 +30,7 @@ namespace GenPurposeConsoleAppTest {
 
       //Yielder.Run();
       //WebFileExtChange.Run();
-      //CS7FeaturesTest.Run();
+      //CSFeaturesTest.Run();
       //AnnonyTuples.Run();
       //LinqThings.Run();
       //ASyncTest.Run();
@@ -53,6 +52,9 @@ namespace GenPurposeConsoleAppTest {
       //SignChangeTest.Run();
       //BitVector64Test.Run();
       //LogGenerator.Run();
+      
+      
+      
       GeneralPurposeTests.Run();
     }
   }

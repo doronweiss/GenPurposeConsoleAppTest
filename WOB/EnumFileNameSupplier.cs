@@ -7,7 +7,7 @@ using System.IO;
 using System.Security;
 using Mono.CSharp;
 
-namespace GenPurposeConsoleAppTest {
+namespace GenPurposeConsoleAppTest.WOB {
   // NOTE: extension includes the dot (.), "xls" should be ".xls"
   class SortedFileDesc {
     public string prefix = "";
