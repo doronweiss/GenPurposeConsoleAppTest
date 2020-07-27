@@ -9,7 +9,8 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>GenPurposeConsoleAppTest</RootNamespace>
     <AssemblyName>GenPurposeConsoleAppTest</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <LangVersion>8.0</LangVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -105,6 +106,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.IO.FileSystem, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\CS-Script.bin.3.24.0.0\lib\net46\System.IO.FileSystem.dll</HintPath>
       <Private>True</Private>
@@ -138,6 +140,7 @@
     <Compile Include="CastTester.cs" />
     <Compile Include="CRC16.cs" />
     <Compile Include="CRCTester.cs" />
+    <Compile Include="CS8Test.cs" />
     <Compile Include="CSFeaturesTest.cs" />
     <Compile Include="CSParallelism.cs" />
     <Compile Include="CSScriptRT.cs" />

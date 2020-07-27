@@ -52,10 +52,11 @@ namespace GenPurposeConsoleAppTest {
       //SignChangeTest.Run();
       //BitVector64Test.Run();
       //LogGenerator.Run();
+      CS8Test.Run();
       
       
       
-      GeneralPurposeTests.Run();
+      //GeneralPurposeTests.Run();
     }
   }
 }
