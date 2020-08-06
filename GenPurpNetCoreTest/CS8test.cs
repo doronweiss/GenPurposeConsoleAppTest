@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace GenPurpNetCoreTest {
@@ -24,6 +26,10 @@ namespace GenPurpNetCoreTest {
       var v = words[2..6];
       foreach (string s in v)
         Console.WriteLine($"Word = {s}");
+      var rng = 0..10;
+      foreach (int i in Enumerable.Range(3,5))
+        Console.WriteLine($"Got {i}");
+
     }
   }
 }
