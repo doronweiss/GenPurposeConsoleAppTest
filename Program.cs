@@ -46,13 +46,13 @@ namespace GenPurposeConsoleAppTest {
       //UnionTest.Run();
       //Bitvec32Tester.Run();
       //ArrayReverser.Run();
-      //UnsafeTest.Run();
+      UnsafeTest.Run();
       //DestructorTest.Run();
       //EnumFileNameSupplier.Run();
       //SignChangeTest.Run();
       //BitVector64Test.Run();
       //LogGenerator.Run();
-      CS8Test.Run();
+      //CS8Test.Run();
       
       
       
