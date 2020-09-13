@@ -133,7 +133,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnnonyTuples.cs" />
-    <Compile Include="ArrayReverser.cs" />
+    <Compile Include="ArrayTests.cs" />
     <Compile Include="AsyncBinWriter.cs" />
     <Compile Include="ASyncTest.cs" />
     <Compile Include="BinWriterTest.cs" />

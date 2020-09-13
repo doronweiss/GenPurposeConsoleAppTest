@@ -45,14 +45,15 @@ namespace GenPurposeConsoleAppTest {
       //BinWriterTest.Run();
       //UnionTest.Run();
       //Bitvec32Tester.Run();
-      //ArrayReverser.Run();
+      ArrayTests.Run();
       //UnsafeTest.Run();
       //DestructorTest.Run();
       //EnumFileNameSupplier.Run();
       //SignChangeTest.Run();
       //BitVector64Test.Run();
       //LogGenerator.Run();
-      CS8Test.Run();
+      
+      //CS8Test.Run();
       
       
       
