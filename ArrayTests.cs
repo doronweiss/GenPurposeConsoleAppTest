@@ -34,6 +34,22 @@ namespace GenPurposeConsoleAppTest {
       Console.WriteLine($"Source = {Arr2Str(src)}");
       Console.WriteLine($"dest1 = {Arr2Str(dest1)}");
       Console.WriteLine($"dest2 = {Arr2Str(dest2)}");
+
+      // array values conversion
+      Console.WriteLine($"array values conversion");
+      ushort[] shorties = new ushort[32];
+      int [] inties = new int[32];
+      foreach (int idx in Enumerable.Range(0, 16)) {
+        byte[] bts = BitConverter.GetBytes(idx);
+        shorties[idx * 2] = BitConverter.ToUInt16(bts, 0);
+        shorties[idx * 2 + 1] = BitConverter.ToUInt16(bts, 2);
+      }
+      Console.WriteLine($"shorties = {(string.Join("\t", shorties))}");
+      Array.Copy(shorties, inties, 32);
+      Console.WriteLine($"Array = {(string.Join("\t", inties))}");
+      for (int idx = 0; idx < 32; inties[idx++] = 0) ;
+      Buffer.BlockCopy(shorties, 0, inties, 0, 64);
+      Console.WriteLine($"Buffer = {(string.Join("\t", inties))}");
     }
   }
 }
