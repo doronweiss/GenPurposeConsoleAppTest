@@ -2,36 +2,43 @@
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using GenPurposeConsoleAppTest.WOB;
+using MathNet.Numerics.Random;
 
 namespace GenPurposeConsoleAppTest {
   class Bitvec32Tester {
-    public class SingleRobotStateData {
-      public BitVector32 state;
+
+    [StructLayout(LayoutKind.Explicit)]
+    struct UBV32 {
       // *** STATUS access values ***
-      public static BitVector32.Section dryrunSec = BitVector32.CreateSection(1);
-      public static BitVector32.Section opModeSec = BitVector32.CreateSection(4, dryrunSec);
-      public static BitVector32.Section progStateSec = BitVector32.CreateSection(7, opModeSec);
-      public static BitVector32.Section progInitPhaseSec = BitVector32.CreateSection(15, progStateSec);
-      public static BitVector32.Section progStartFromCurrTheta = BitVector32.CreateSection(1, progInitPhaseSec);
-      public static BitVector32.Section weldingSec = BitVector32.CreateSection(1, progStartFromCurrTheta);
-      public static BitVector32.Section feederSec = BitVector32.CreateSection(1, weldingSec);
-      public static BitVector32.Section weldHaltedSec = BitVector32.CreateSection(1, feederSec);
-      public static BitVector32.Section askingOverLimitSec = BitVector32.CreateSection(1, weldHaltedSec);
-      // axes status sections
-      public static BitVector32.Section thetaEnSec = BitVector32.CreateSection(1, askingOverLimitSec);
-      public static BitVector32.Section thetaAbsSec = BitVector32.CreateSection(1, thetaEnSec);
-      public static BitVector32.Section yEnSec = BitVector32.CreateSection(1, thetaAbsSec);
-      public static BitVector32.Section yAbsSec = BitVector32.CreateSection(1, yEnSec);
-      public static BitVector32.Section zEnSec = BitVector32.CreateSection(1, yAbsSec);
-      public static BitVector32.Section zAbsSec = BitVector32.CreateSection(1, zEnSec);
+      public static readonly int m1 = BitVector32.CreateMask(); //0
+      public static readonly int m2 = BitVector32.CreateMask(m1); //1
+      public static readonly int m3 = BitVector32.CreateMask(m2); //2
+      public static readonly int m4 = BitVector32.CreateMask(m3); //3
+      
+      [FieldOffset(0)]
+      public BitVector32 state;
+      [FieldOffset(0)]
+      public int data;
     }
 
     public static void Run() {
-      SingleRobotStateData ssd = new SingleRobotStateData();
-      Console.WriteLine($"{ssd.state:X}");
-      Console.WriteLine($" Offset: {SingleRobotStateData.zAbsSec.Offset}");
+      UBV32 ssd = new UBV32();
+      ssd.data = 9;
+      Console.WriteLine($"{ssd.data:X}");
+      Console.WriteLine($" Offset: {ssd.state[UBV32.m1]}, {ssd.state[UBV32.m2]}, {ssd.state[UBV32.m3]}, {ssd.state[UBV32.m4]}");
+      ssd.data = 1;
+      Console.WriteLine($"{ssd.data:X}");
+      Console.WriteLine($" Offset: {ssd.state[UBV32.m1]}, {ssd.state[UBV32.m2]}, {ssd.state[UBV32.m3]}, {ssd.state[UBV32.m4]}");
+      ssd.data = 6;
+      Console.WriteLine($"{ssd.data:X}");
+      Console.WriteLine($" Offset: {ssd.state[UBV32.m1]}, {ssd.state[UBV32.m2]}, {ssd.state[UBV32.m3]}, {ssd.state[UBV32.m4]}");
+      ssd.data = 14;
+      Console.WriteLine($"{ssd.data:X}");
+      Console.WriteLine($" Offset: {ssd.state[UBV32.m1]}, {ssd.state[UBV32.m2]}, {ssd.state[UBV32.m3]}, {ssd.state[UBV32.m4]}");
     }
 
   }

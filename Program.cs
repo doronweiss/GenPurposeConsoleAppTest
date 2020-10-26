@@ -44,8 +44,8 @@ namespace GenPurposeConsoleAppTest {
       //MovingAvgTest.Run();
       //BinWriterTest.Run();
       //UnionTest.Run();
-      //Bitvec32Tester.Run();
-      ArrayTests.Run();
+      Bitvec32Tester.Run();
+      //ArrayTests.Run();
       //UnsafeTest.Run();
       //DestructorTest.Run();
       //EnumFileNameSupplier.Run();
