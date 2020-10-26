@@ -44,7 +44,8 @@ namespace GenPurposeConsoleAppTest {
       //MovingAvgTest.Run();
       //BinWriterTest.Run();
       //UnionTest.Run();
-      Bitvec32Tester.Run();
+      //Bitvec32Tester.Run();
+      Bitvec16Test.Run();
       //ArrayTests.Run();
       //UnsafeTest.Run();
       //DestructorTest.Run();
@@ -52,11 +53,11 @@ namespace GenPurposeConsoleAppTest {
       //SignChangeTest.Run();
       //BitVector64Test.Run();
       //LogGenerator.Run();
-      
+
       //CS8Test.Run();
-      
-      
-      
+
+
+
       //GeneralPurposeTests.Run();
     }
   }
