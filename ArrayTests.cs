@@ -50,6 +50,13 @@ namespace GenPurposeConsoleAppTest {
       for (int idx = 0; idx < 32; inties[idx++] = 0) ;
       Buffer.BlockCopy(shorties, 0, inties, 0, 64);
       Console.WriteLine($"Buffer = {(string.Join("\t", inties))}");
+      // shorts to bytes
+      short[] shvals = new short[] {1, 2, 3, 4, 5, 6, 7, 8};
+      byte[] bts2 = new byte[16];
+      Buffer.BlockCopy(shvals, 0, bts2, 0, 16);
+      Console.WriteLine("Bytes:");
+      for (int idx=0; idx<16; idx++)
+        Console.WriteLine($"Bytes[{idx}] = {bts2[idx]}");
     }
   }
 }
