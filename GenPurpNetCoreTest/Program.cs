@@ -5,7 +5,7 @@ namespace GenPurpNetCoreTest {
     static void Main(string[] args) {
       //CS8test.Run();
       //JSONtest.Run();
-      GeneralPurposeTests.Run();
+      NestedClassTest.Run();
     }
   }
 }
