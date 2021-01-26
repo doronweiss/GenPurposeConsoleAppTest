@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenPurposeConsoleAppTest", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenPurpNetCoreTest", "GenPurpNetCoreTest\GenPurpNetCoreTest.csproj", "{6ECCD2A2-28DA-43F5-9919-FB24E74F3122}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SettingJSONTest", "SettingJSONTest\SettingJSONTest.csproj", "{B0BDC7B1-545A-46C3-9B7C-BBA56BC675F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,14 @@ Global
 		{6ECCD2A2-28DA-43F5-9919-FB24E74F3122}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6ECCD2A2-28DA-43F5-9919-FB24E74F3122}.Release|x86.ActiveCfg = Release|Any CPU
 		{6ECCD2A2-28DA-43F5-9919-FB24E74F3122}.Release|x86.Build.0 = Release|Any CPU
+		{B0BDC7B1-545A-46C3-9B7C-BBA56BC675F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0BDC7B1-545A-46C3-9B7C-BBA56BC675F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0BDC7B1-545A-46C3-9B7C-BBA56BC675F5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B0BDC7B1-545A-46C3-9B7C-BBA56BC675F5}.Debug|x86.Build.0 = Debug|Any CPU
+		{B0BDC7B1-545A-46C3-9B7C-BBA56BC675F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0BDC7B1-545A-46C3-9B7C-BBA56BC675F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0BDC7B1-545A-46C3-9B7C-BBA56BC675F5}.Release|x86.ActiveCfg = Release|Any CPU
+		{B0BDC7B1-545A-46C3-9B7C-BBA56BC675F5}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
