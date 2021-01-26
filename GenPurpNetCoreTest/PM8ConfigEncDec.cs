@@ -231,13 +231,13 @@ namespace GenPurpNetCoreTest {
     public string updateValue;
     public bool isDisable;
     public string type;
-    public OptionValueType[] options;
+    public List<OptionValueType> options;
     public string[] validation;
   }
 
   public class CategoryProps {
     public string displayKey;
-    public SingleValueData[] data;
+    public List<SingleValueData> data;
   }
 
   public class CategoryType {
@@ -246,33 +246,49 @@ namespace GenPurpNetCoreTest {
   }
 
   public class SettingsDefs {
-    public CategoryType[] categories;
+    public List<CategoryType> categories;
   }
 
 
   class PM8ConfigEncDec {
     public static void Run() {
-      SettingsDefs sd = new SettingsDefs() {
-        categories = new CategoryType[2]
-      };
-      // 0
-      sd.categories[0] = new CategoryType() {
+      SettingsDefs sd = new SettingsDefs() {categories = new List<CategoryType>()};
+      // category general
+      sd.categories.Add(new CategoryType() {
         categoryKey = "general",
         categoryProperties = new CategoryProps() {displayKey = "the general data"}
-      };
-      sd.categories[0].categoryProperties.data = new SingleValueData[2];
-      sd.categories[0].categoryProperties.data[0] = new SingleValueData() {
+      });
+      sd.categories[0].categoryProperties.data = new List<SingleValueData>();
+      List<SingleValueData> svds = sd.categories[0].categoryProperties.data; // just a shorthand
+      //1
+      SingleValueData svd= new SingleValueData() {
         key = "ip", displayKey = "Ip", currentValue = "192.168.1.125", isDisable = false, type = "string", validation = new[] {"required"}
       };
-      //1
-      sd.categories[1] = new CategoryType() {
-        categoryKey = "general",
-        categoryProperties = new CategoryProps() {displayKey = "the general data"}
-      };
-      sd.categories[1].categoryProperties.data = new SingleValueData[2];
+      svds.Add(svd);
+      //2
       sd.categories[1].categoryProperties.data[0] = new SingleValueData() {
         key = "isDhcp", displayKey = "Is DHCP", currentValue = "true", isDisable = false, type = "bool", validation = new[] {"required"}
       };
+      svds.Add(svd);
+      // PLC config
+      sd.categories.Add(new CategoryType() {
+        categoryKey = "PLCConfigParameters",
+        categoryProperties = new CategoryProps() {displayKey = "PLC ponfig parameters"}
+      });
+      sd.categories[1].categoryProperties.data = new List<SingleValueData>();
+      svds = sd.categories[1].categoryProperties.data; // just a shorthand
+      //1
+      svd = new SingleValueData() {
+        key = "travelSpeedXMaxMM2S", displayKey = "Travel speed X max [mm/s]", 
+        currentValue = "250", isDisable = false, type = "int", validation = new[] {"required"}
+      };
+      svds.Add(svd);
+      //2
+      svd = new SingleValueData() {
+        key = "travelSpeedYMaxMM2S", displayKey = "Travel speed Y max [mm/s]",
+        currentValue = "250", isDisable = false, type = "int", validation = new[] {"required"}
+      };
+      svds.Add(svd);
 
       string json = JsonConvert.SerializeObject(sd, Formatting.Indented);
       Console.WriteLine(json);
