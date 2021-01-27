@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
 using SettingJSONTest;
@@ -234,68 +235,72 @@ namespace SettingJSONTest {
     public bool isDisable;
     [JsonIgnore]
     public JSONDataType dataType;
-    public string type => dataType.ToString();
-    public List<OptionValueType> options;
-    public string[] validation;
-  }
-
-  public class CategoryProps {
-    public string displayKey;
-    public List<SingleValueData> data;
+    public string type {
+      get => dataType.ToString();
+      set => dataType = Enum.Parse<JSONDataType>(value);
+    }
+    public List<OptionValueType> options = new List<OptionValueType>();
+    public List<string> validation = new List<string>();
   }
 
   public class CategoryType {
     public string categoryKey;
-    public CategoryProps categoryProperties;
+    public string displayKey;
+    public List<SingleValueData> data = new List<SingleValueData>();
+  }
+
+  public class CellDefs {
+    public int cellNumber;
+    public int shelfNumber = 0; // what piston to push, 0=None
+    public int XPosMM; // cell center X
+    public int YPosMM; // cell top Y
+    public int HeightMM; // cell top Y
   }
 
   public class SettingsDefs {
-    public List<CategoryType> categories;
+    public List<CategoryType> categories = new List<CategoryType>();
+    public List<CellDefs> cells = new List<CellDefs>();
   }
 }
 #endregion SETTINGS JSON
 
 class Program {
-  static void Main(string[] args) {
-    SettingsDefs sd = new SettingsDefs() { categories = new List<CategoryType>() };
-    // category general
-    sd.categories.Add(new CategoryType() {
-      categoryKey = "general",
-      categoryProperties = new CategoryProps() { displayKey = "the general data" }
-    });
-    sd.categories[0].categoryProperties.data = new List<SingleValueData>();
-    List<SingleValueData> svds = sd.categories[0].categoryProperties.data; // just a shorthand
-                                                                           //1
+  static SingleValueData CreateSVD(
+    string key, string displayKey, string currentValue,
+    bool isDisable, JSONDataType dataType,
+    OptionValueType [] options, string [] validation) {
     SingleValueData svd = new SingleValueData() {
-      key = "ip", displayKey = "Ip", currentValue = "192.168.1.125", isDisable = false, dataType = JSONDataType.text, validation = new[] { "required" }
+      key = key, displayKey = displayKey, currentValue = currentValue, updateValue = "", isDisable = isDisable, 
+      dataType = dataType,  options  = options.ToList(), validation = validation.ToList()
     };
-    svds.Add(svd);
-    //2
-    svd = new SingleValueData() {
-      key = "isDhcp", displayKey = "Is DHCP", currentValue = "true", isDisable = false, dataType = JSONDataType.boolean, validation = new[] { "required" }
-    };
-    svds.Add(svd);
-    // PLC config
-    sd.categories.Add(new CategoryType() {
-      categoryKey = "PLCConfigParameters",
-      categoryProperties = new CategoryProps() { displayKey = "PLC ponfig parameters" }
-    });
-    sd.categories[1].categoryProperties.data = new List<SingleValueData>();
-    svds = sd.categories[1].categoryProperties.data; // just a shorthand
-                                                     //1
-    svd = new SingleValueData() {
-      key = "travelSpeedXMaxMM2S", displayKey = "Travel speed X max [mm/s]",
-      currentValue = "250", isDisable = false, dataType = JSONDataType.Number, validation = new[] { "required" }
-    };
-    svds.Add(svd);
-    //2
-    svd = new SingleValueData() {
-      key = "travelSpeedYMaxMM2S", displayKey = "Travel speed Y max [mm/s]",
-      currentValue = "250", isDisable = false, dataType = JSONDataType.Number, validation = new[] { "required" }
-    };
-    svds.Add(svd);
+    return svd;
+  }
 
+
+  static SettingsDefs PackSettings() {
+    SettingsDefs sd = new SettingsDefs() {categories = new List<CategoryType>()};
+    // category general
+    CategoryType ct = new CategoryType() {categoryKey = "general", displayKey = "the general data"};
+    ct.data.Add(CreateSVD("ip", "Ip", "192.168.1.125", false, JSONDataType.text, new OptionValueType[]{}, new string[] {"required"}));
+    ct.data.Add(CreateSVD("isDhcp", "Is DHCP", "true", false, JSONDataType.boolean, new OptionValueType[] { }, new string[] {"required"}));
+    sd.categories.Add(ct);
+    // PLC config
+    ct = new CategoryType() {categoryKey = "PLCConfigParameters", displayKey = "PLC ponfig parameters"};
+    ct.data.Add(CreateSVD("travelSpeedXMaxMM2S", "Travel speed X max [mm/s]", "250", false, JSONDataType.Number, new OptionValueType[] { }, new string[] {"required"}));
+    ct.data.Add(CreateSVD("travelSpeedYMaxMM2S", "Travel speed Y max [mm/s]", "250", false, JSONDataType.Number, new OptionValueType[] { }, new string[] {"required"}));
+    sd.categories.Add(ct);
+    // cells
+    sd.cells.Add(new CellDefs(){cellNumber = 211, shelfNumber = 0, XPosMM = 200, YPosMM = 10, HeightMM = 150});
+    sd.cells.Add(new CellDefs(){cellNumber = 212, shelfNumber = 0, XPosMM = 300, YPosMM = 10, HeightMM = 150});
+    sd.cells.Add(new CellDefs(){cellNumber = 213, shelfNumber = 0, XPosMM = 400, YPosMM = 10, HeightMM = 150});
+
+    return sd;
+  }
+
+  static void Main(string[] args) {
+    SettingsDefs sd = PackSettings();
     string json = JsonConvert.SerializeObject(sd, Formatting.Indented);
+    SettingsDefs sdRes = JsonConvert.DeserializeObject<SettingsDefs>(json);
     Console.WriteLine(json);
   }
 }
