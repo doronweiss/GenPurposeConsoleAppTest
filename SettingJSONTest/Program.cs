@@ -217,6 +217,10 @@ namespace SettingJSONTest {
   }
 
   #region SETTINGS JSON
+  public enum JSONDataType {
+    text, Number, boolean, checkbox, select, structureRowG5, cellDefsG6
+  };
+
   public class OptionValueType {
     public string key;
     public string value;
@@ -228,7 +232,9 @@ namespace SettingJSONTest {
     public string currentValue;
     public string updateValue;
     public bool isDisable;
-    public string type;
+    [JsonIgnore]
+    public JSONDataType dataType;
+    public string type => dataType.ToString();
     public List<OptionValueType> options;
     public string[] validation;
   }
@@ -261,12 +267,12 @@ class Program {
     List<SingleValueData> svds = sd.categories[0].categoryProperties.data; // just a shorthand
                                                                            //1
     SingleValueData svd = new SingleValueData() {
-      key = "ip", displayKey = "Ip", currentValue = "192.168.1.125", isDisable = false, type = "string", validation = new[] { "required" }
+      key = "ip", displayKey = "Ip", currentValue = "192.168.1.125", isDisable = false, dataType = JSONDataType.text, validation = new[] { "required" }
     };
     svds.Add(svd);
     //2
     svd = new SingleValueData() {
-      key = "isDhcp", displayKey = "Is DHCP", currentValue = "true", isDisable = false, type = "bool", validation = new[] { "required" }
+      key = "isDhcp", displayKey = "Is DHCP", currentValue = "true", isDisable = false, dataType = JSONDataType.boolean, validation = new[] { "required" }
     };
     svds.Add(svd);
     // PLC config
@@ -279,13 +285,13 @@ class Program {
                                                      //1
     svd = new SingleValueData() {
       key = "travelSpeedXMaxMM2S", displayKey = "Travel speed X max [mm/s]",
-      currentValue = "250", isDisable = false, type = "int", validation = new[] { "required" }
+      currentValue = "250", isDisable = false, dataType = JSONDataType.Number, validation = new[] { "required" }
     };
     svds.Add(svd);
     //2
     svd = new SingleValueData() {
       key = "travelSpeedYMaxMM2S", displayKey = "Travel speed Y max [mm/s]",
-      currentValue = "250", isDisable = false, type = "int", validation = new[] { "required" }
+      currentValue = "250", isDisable = false, dataType = JSONDataType.Number, validation = new[] { "required" }
     };
     svds.Add(svd);
 
