@@ -249,17 +249,23 @@ namespace SettingJSONTest {
     public List<SingleValueData> data = new List<SingleValueData>();
   }
 
-  public class CellDefs {
+  public class G6CellDefs {
     public int cellNumber;
     public int shelfNumber = 0; // what piston to push, 0=None
     public int XPosMM; // cell center X
     public int YPosMM; // cell top Y
     public int HeightMM; // cell top Y
+
+    public int updateCellNumber=0;
+    public int updateShelfNumber = 0; // what piston to push, 0=None
+    public int updateXPosMM=0; // cell center X
+    public int updateYPosMM=0; // cell top Y
+    public int updateHeightMM=0; // cell top Y
   }
 
   public class SettingsDefs {
     public List<CategoryType> categories = new List<CategoryType>();
-    public List<CellDefs> cells = new List<CellDefs>();
+    public List<G6CellDefs> cells = new List<G6CellDefs>();
   }
 }
 #endregion SETTINGS JSON
@@ -290,9 +296,9 @@ class Program {
     ct.data.Add(CreateSVD("travelSpeedYMaxMM2S", "Travel speed Y max [mm/s]", "250", false, JSONDataType.Number, new OptionValueType[] { }, new string[] {"required"}));
     sd.categories.Add(ct);
     // cells
-    sd.cells.Add(new CellDefs(){cellNumber = 211, shelfNumber = 0, XPosMM = 200, YPosMM = 10, HeightMM = 150});
-    sd.cells.Add(new CellDefs(){cellNumber = 212, shelfNumber = 0, XPosMM = 300, YPosMM = 10, HeightMM = 150});
-    sd.cells.Add(new CellDefs(){cellNumber = 213, shelfNumber = 0, XPosMM = 400, YPosMM = 10, HeightMM = 150});
+    sd.cells.Add(new G6CellDefs(){cellNumber = 211, shelfNumber = 0, XPosMM = 200, YPosMM = 10, HeightMM = 150});
+    sd.cells.Add(new G6CellDefs(){cellNumber = 212, shelfNumber = 0, XPosMM = 300, YPosMM = 10, HeightMM = 150});
+    sd.cells.Add(new G6CellDefs(){cellNumber = 213, shelfNumber = 0, XPosMM = 400, YPosMM = 10, HeightMM = 150});
 
     return sd;
   }
