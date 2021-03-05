@@ -17,8 +17,20 @@ namespace GenPurpNetCoreTest {
       double frac = (xs[idx + 1] - lookupVal) / (xs[idx + 1] - xs[idx]);
       double y = ys[idx] + frac * (ys[idx + 1] - ys[idx]);
       double zbad = zs[idx] + frac * (ys[idx + 1] - ys[idx]); // duplicated
-      double zgood = zs[idx] + frac * (zs[idx + 1] - zs[idx]); // duplicated
+      double zgood = zs[idx] + frac * (zs[idx + 1] - zs[idx]); // duplicated - fixed
       Console.WriteLine($"Lookup: {lookupVal} => Y: {y}, Z Bad: {zbad}, Z Good: {zgood}");
     }
   }
 }
+
+/*
+ * <?xml version="1.0" encoding="utf-8"?>
+<DuplicatesReport ToolsVersion="203.0.20210217.101413">
+  <Statistics>
+    <CodebaseCost>503</CodebaseCost>
+    <TotalDuplicatesCost>0</TotalDuplicatesCost>
+    <TotalFragmentsCost>0</TotalFragmentsCost>
+  </Statistics>
+  <Duplicates></Duplicates>
+</DuplicatesReport>
+ */
