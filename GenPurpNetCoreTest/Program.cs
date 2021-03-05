@@ -8,7 +8,8 @@ namespace GenPurpNetCoreTest {
       //NestedClassTest.Run();
       //AnonJsonTest.Run();
       //PM8ConfigEncDec.Run();
-      AttributesTest.Run();
+      //AttributesTest.Run();
+      DupTestClass.Run();
     }
   }
 }
