@@ -11,7 +11,8 @@ namespace GenPurpNetCoreTest {
       //AttributesTest.Run();
       //DupTestClass.Run();
       //NetworkIPChange.Run();
-      SerialParseTest.Run();
+      //SerialParseTest.Run();
+      AsyncAwaitTest.Run();
     }
   }
 }
