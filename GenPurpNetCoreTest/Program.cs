@@ -10,9 +10,9 @@ namespace GenPurpNetCoreTest {
       //PM8ConfigEncDec.Run();
       //AttributesTest.Run();
       //DupTestClass.Run();
-      //NetworkIPChange.Run();
+      NetworkIPChange.Run();
       //SerialParseTest.Run();
-      AsyncAwaitTest.Run();
+      //AsyncAwaitTest.Run();
     }
   }
 }

@@ -9,6 +9,9 @@ using System.Net;
 using GenPurpNetCoreTest;
 
 namespace GenPurpNetCoreTest {
+
+  class NetworkIPChanger { }
+
   class IPChanger {
       // https: //stackoverflow.com/questions/209779/how-can-you-change-network-settings-ip-address-dns-wins-host-name-with-code    class NetworkManagement {
       public void setIP(string ip_address, string subnet_mask) {
@@ -100,8 +103,8 @@ namespace GenPurpNetCoreTest {
         //IPInterfaceProperties properties = ni.GetIPProperties();
         int idx = 0;
         foreach (UnicastIPAddressInformation ip in ni.GetIPProperties().UnicastAddresses) {
-          //if (ip.Address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
-          Console.WriteLine($"Index: {idx}, Family: {ip.Address.AddressFamily}, Address: {ip.Address.ToString()}");
+          if (ip.Address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+            Console.WriteLine($"Index: {idx}, Family: {ip.Address.AddressFamily}, Address: {ip.Address.ToString()}");
           idx++;
         }
         // ni.GetIPProperties().UnicastAddresses.Remove(ni.GetIPProperties().UnicastAddresses);
