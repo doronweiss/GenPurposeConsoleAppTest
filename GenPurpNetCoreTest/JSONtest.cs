@@ -91,6 +91,7 @@ namespace GenPurpNetCoreTest {
       // cfg.cells = new Test1CellDefinition[] { new Test1CellDefinition() { HeightMM = 10, XPosMM = 20, YPosMM = 30, cellId = 1, shelfNumber = 0 } };
       // string json = JsonConvert.SerializeObject(cfg, Formatting.Indented);
       // Console.WriteLine(json);
+      /*
       PolyOp1 po1 = new PolyOp1() { name = "moshe", anumber = 17 };
       PolyOp2 po2 = new PolyOp2() { id = 53, avalue = 1973, dummydata = "kukuriku" };
       PolyRoot pr = new PolyRoot() { optype = 1, id = 11, opData = JsonConvert.SerializeObject(po1) };
@@ -99,6 +100,11 @@ namespace GenPurpNetCoreTest {
       pr = new PolyRoot() {optype = 2, id = 11, opData = JsonConvert.SerializeObject(po2)};
       json = JsonConvert.SerializeObject(pr);
       Parseit(json);
+      */
+      short[] data = new short[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6};
+      string outStr = JsonConvert.SerializeObject(data);
+      Console.WriteLine($"JSON: {outStr}");
+      System.Diagnostics.Debug.WriteLine($"JSON: {outStr}");
     }
 
   }
