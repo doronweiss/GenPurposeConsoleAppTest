@@ -86,19 +86,40 @@ namespace GenPurpNetCoreTest {
       }
     }
 
+    public class CellsInv {
+      public int CellNum { get; set; }
+      public bool IsFull { get; set; }
+    }
+
+    public class Root {
+      public List<CellsInv> CellsInv { get; set; }
+    }
+
     public static void Run() {
+      // test 1
       // Test1AppXMLConfig cfg = new Test1AppXMLConfig();
       // cfg.cells = new Test1CellDefinition[] { new Test1CellDefinition() { HeightMM = 10, XPosMM = 20, YPosMM = 30, cellId = 1, shelfNumber = 0 } };
       // string json = JsonConvert.SerializeObject(cfg, Formatting.Indented);
       // Console.WriteLine(json);
-      PolyOp1 po1 = new PolyOp1() { name = "moshe", anumber = 17 };
-      PolyOp2 po2 = new PolyOp2() { id = 53, avalue = 1973, dummydata = "kukuriku" };
-      PolyRoot pr = new PolyRoot() { optype = 1, id = 11, opData = JsonConvert.SerializeObject(po1) };
-      string json = JsonConvert.SerializeObject(pr);
-      Parseit(json);
-      pr = new PolyRoot() {optype = 2, id = 11, opData = JsonConvert.SerializeObject(po2)};
-      json = JsonConvert.SerializeObject(pr);
-      Parseit(json);
+      
+      // test 2
+      // PolyOp1 po1 = new PolyOp1() { name = "moshe", anumber = 17 };
+      // PolyOp2 po2 = new PolyOp2() { id = 53, avalue = 1973, dummydata = "kukuriku" };
+      // PolyRoot pr = new PolyRoot() { optype = 1, id = 11, opData = JsonConvert.SerializeObject(po1) };
+      // string json = JsonConvert.SerializeObject(pr);
+      // Parseit(json);
+      // pr = new PolyRoot() {optype = 2, id = 11, opData = JsonConvert.SerializeObject(po2)};
+      // json = JsonConvert.SerializeObject(pr);
+      // Parseit(json);
+      
+      // test 3
+      Root r = new Root() {CellsInv = new List<CellsInv>()};
+      r.CellsInv.Add(new CellsInv(){CellNum = 1, IsFull = true});
+      r.CellsInv.Add(new CellsInv(){CellNum = 2, IsFull = false});
+      r.CellsInv.Add(new CellsInv(){CellNum = 3, IsFull = true});
+      r.CellsInv.Add(new CellsInv(){CellNum = 4, IsFull = false});
+      string json = JsonConvert.SerializeObject(r);
+      Console.WriteLine($"JSON: {json}");
     }
 
   }
