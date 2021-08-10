@@ -14,7 +14,8 @@ namespace GenPurpNetCoreTest {
       //SerialParseTest.Run();
       //AsyncAwaitTest.Run();
       //UnixTime.Run();
-      FeederPositions.Run();
+      //FeederPositions.Run();
+      IPAddressIssues.Run();
     }
   }
 }
