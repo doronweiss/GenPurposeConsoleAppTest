@@ -44,6 +44,7 @@ namespace IPChanger {
       this.adapterTB.Name = "adapterTB";
       this.adapterTB.Size = new System.Drawing.Size(219, 23);
       this.adapterTB.TabIndex = 0;
+      this.adapterTB.Text = "Ethernet";
       // 
       // label1
       // 
@@ -79,6 +80,7 @@ namespace IPChanger {
       this.ipTB.Name = "ipTB";
       this.ipTB.Size = new System.Drawing.Size(219, 23);
       this.ipTB.TabIndex = 3;
+      this.ipTB.Text = "192.168.12.78";
       // 
       // label3
       // 
@@ -95,6 +97,7 @@ namespace IPChanger {
       this.gatewayTB.Name = "gatewayTB";
       this.gatewayTB.Size = new System.Drawing.Size(219, 23);
       this.gatewayTB.TabIndex = 5;
+      this.gatewayTB.Text = "255.255.255.0";
       // 
       // label4
       // 
