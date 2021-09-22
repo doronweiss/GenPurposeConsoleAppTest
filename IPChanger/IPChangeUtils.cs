@@ -20,21 +20,24 @@ namespace IPChanger {
       dynamic nic = null;
       bool found = false;
       bool hasNIC = enumer.MoveNext();
+      int first = 0;
       while (hasNIC) {
         nic = enumer.Current;
         //System.Diagnostics.Debug.WriteLine($"Name = {nic.Properties.Count}");
         var enumerP = enumer.Current.Properties.GetEnumerator();
         while (enumerP.MoveNext()) {
           dynamic prop = enumerP.Current;
-          if (prop.Name == "Name") {
+          //System.Diagnostics.Debug.WriteLine($"{first}:{prop.Name} = {prop.Value}");
+          if (prop.Name == "NetConnectionID") {
             System.Diagnostics.Debug.WriteLine($"{prop.Name} = {prop.Value}");
-            if (prop.Value == adapter)
+            if (string.Compare((prop?.Value.ToString() ?? ""), adapter, true) == 0)
               found = true;
           }
         }
         if (found)
           break;
         hasNIC = enumer.MoveNext();
+        first++;
       }
       if (!found)
         return false;
