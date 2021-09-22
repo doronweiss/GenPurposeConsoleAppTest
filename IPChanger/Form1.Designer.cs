@@ -80,7 +80,7 @@ namespace IPChanger {
       this.ipTB.Name = "ipTB";
       this.ipTB.Size = new System.Drawing.Size(219, 23);
       this.ipTB.TabIndex = 3;
-      this.ipTB.Text = "192.168.12.78";
+      this.ipTB.Text = "192.168.1.129";
       // 
       // label3
       // 
