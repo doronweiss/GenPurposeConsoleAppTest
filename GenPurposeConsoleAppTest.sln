@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SettingJSONTest", "SettingJ
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MatLib", "MatLib\MatLib.csproj", "{C2D60F10-DC87-4986-B54F-F1C216A9ED4F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPChanger", "IPChanger\IPChanger.csproj", "{6FC38403-3856-4DEA-A67F-6BE8CA0ECC6F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,14 @@ Global
 		{C2D60F10-DC87-4986-B54F-F1C216A9ED4F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C2D60F10-DC87-4986-B54F-F1C216A9ED4F}.Release|x86.ActiveCfg = Release|Any CPU
 		{C2D60F10-DC87-4986-B54F-F1C216A9ED4F}.Release|x86.Build.0 = Release|Any CPU
+		{6FC38403-3856-4DEA-A67F-6BE8CA0ECC6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FC38403-3856-4DEA-A67F-6BE8CA0ECC6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FC38403-3856-4DEA-A67F-6BE8CA0ECC6F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6FC38403-3856-4DEA-A67F-6BE8CA0ECC6F}.Debug|x86.Build.0 = Debug|Any CPU
+		{6FC38403-3856-4DEA-A67F-6BE8CA0ECC6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FC38403-3856-4DEA-A67F-6BE8CA0ECC6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FC38403-3856-4DEA-A67F-6BE8CA0ECC6F}.Release|x86.ActiveCfg = Release|Any CPU
+		{6FC38403-3856-4DEA-A67F-6BE8CA0ECC6F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
