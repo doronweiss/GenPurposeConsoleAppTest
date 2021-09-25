@@ -15,7 +15,14 @@ namespace IPChanger {
     }
 
     private void doBTN_Click(object sender, EventArgs e) {
-      bool res = IPChangeUtils.SetNetworkConfig(adapterTB.Text, isDHCPCHB.Checked, ipTB.Text, gatewayTB.Text, dns1TB.Text, dns2TB.Text);
+      bool res = 
+        IPChangeUtils.SetNetworkConfig(adapterTB.Text, 
+          isDHCPCHB.Checked, 
+          ipTB.Text, 
+          subnetTB.Text,
+          gatewayTB.Text, 
+          dns1TB.Text, 
+          dns2TB.Text);
       MessageBox.Show($"Returned: {res}");
     }
   }

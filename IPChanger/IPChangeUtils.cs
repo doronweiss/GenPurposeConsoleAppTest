@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace IPChanger {
   static class IPChangeUtils {
-    public static bool SetNetworkConfig(string adapter, bool isDHCP, string ipAddress, string gateway, string dns1, string dns2) {
+    public static bool SetNetworkConfig(string adapter, bool isDHCP, string ipAddress, string subnetMak, string gateway, string dns1, string dns2) {
       //ManagementObjectSearcher mos = new ManagementObjectSearcher($"Select * From Win32_NetworkAdapter Where NetConnectionID = '{adapter}'");
       //ManagementObjectSearcher mos = new ManagementObjectSearcher($"Select * From Win32_NetworkAdapterConfiguration");// Where NetConnectionID = '{adapter}'");
       ManagementObjectSearcher mos = new ManagementObjectSearcher($"Select * From Win32_NetworkAdapter");// Where NetConnectionID = '{adapter}'");
@@ -55,13 +55,27 @@ namespace IPChanger {
       //   }
       // }
       //return false;
+      object res;
       if (isDHCP)
-        return nic.EnableDHCP()<=1;
+        res = nic.InvokeMethod("EnableDHCP", null);
       else {
-        if (!nic.EnableStatic(ipAddress, gateway))
+        ManagementBaseObject newIP =
+          nic.GetMethodParameters("EnableStatic");
+        newIP["IPAddress"] = new string[] { ipAddress };
+        newIP["SubnetMask"] = new string[] { subnetMak };
+        res = nic.InvokeMethod("EnableStatic", newIP, null);
+        if ((res is int ires) && ires > 1)
           return false;
+        ManagementBaseObject newGW =
+          nic.GetMethodParameters("SetGateways");
+        newGW["DefaultIPGateway"] = new string[] { gateway };
+        newGW["GatewayCostMetric"] = new int[] { 1 };
+        res = nic.InvokeMethod("SetGateways", newGW, null);
+        if ((res is int ires2) && ires2 > 1)
+          return false;
+        return true;
       }
-      return true;
+      return false;
     }
   }
 }

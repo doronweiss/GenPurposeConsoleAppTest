@@ -36,6 +36,8 @@ namespace IPChanger {
       this.label5 = new System.Windows.Forms.Label();
       this.dns2TB = new System.Windows.Forms.TextBox();
       this.doBTN = new System.Windows.Forms.Button();
+      this.label6 = new System.Windows.Forms.Label();
+      this.subnetTB = new System.Windows.Forms.TextBox();
       this.SuspendLayout();
       // 
       // adapterTB
@@ -85,7 +87,7 @@ namespace IPChanger {
       // label3
       // 
       this.label3.AutoSize = true;
-      this.label3.Location = new System.Drawing.Point(11, 96);
+      this.label3.Location = new System.Drawing.Point(11, 129);
       this.label3.Name = "label3";
       this.label3.Size = new System.Drawing.Size(51, 15);
       this.label3.TabIndex = 6;
@@ -93,16 +95,16 @@ namespace IPChanger {
       // 
       // gatewayTB
       // 
-      this.gatewayTB.Location = new System.Drawing.Point(87, 93);
+      this.gatewayTB.Location = new System.Drawing.Point(87, 126);
       this.gatewayTB.Name = "gatewayTB";
       this.gatewayTB.Size = new System.Drawing.Size(219, 23);
       this.gatewayTB.TabIndex = 5;
-      this.gatewayTB.Text = "255.255.255.0";
+      this.gatewayTB.Text = "192.168.1.1";
       // 
       // label4
       // 
       this.label4.AutoSize = true;
-      this.label4.Location = new System.Drawing.Point(11, 125);
+      this.label4.Location = new System.Drawing.Point(11, 160);
       this.label4.Name = "label4";
       this.label4.Size = new System.Drawing.Size(36, 15);
       this.label4.TabIndex = 8;
@@ -110,7 +112,7 @@ namespace IPChanger {
       // 
       // dns1TB
       // 
-      this.dns1TB.Location = new System.Drawing.Point(87, 122);
+      this.dns1TB.Location = new System.Drawing.Point(87, 157);
       this.dns1TB.Name = "dns1TB";
       this.dns1TB.Size = new System.Drawing.Size(219, 23);
       this.dns1TB.TabIndex = 7;
@@ -118,7 +120,7 @@ namespace IPChanger {
       // label5
       // 
       this.label5.AutoSize = true;
-      this.label5.Location = new System.Drawing.Point(11, 154);
+      this.label5.Location = new System.Drawing.Point(11, 191);
       this.label5.Name = "label5";
       this.label5.Size = new System.Drawing.Size(36, 15);
       this.label5.TabIndex = 10;
@@ -126,14 +128,14 @@ namespace IPChanger {
       // 
       // dns2TB
       // 
-      this.dns2TB.Location = new System.Drawing.Point(87, 151);
+      this.dns2TB.Location = new System.Drawing.Point(87, 188);
       this.dns2TB.Name = "dns2TB";
       this.dns2TB.Size = new System.Drawing.Size(219, 23);
       this.dns2TB.TabIndex = 9;
       // 
       // doBTN
       // 
-      this.doBTN.Location = new System.Drawing.Point(11, 190);
+      this.doBTN.Location = new System.Drawing.Point(12, 228);
       this.doBTN.Name = "doBTN";
       this.doBTN.Size = new System.Drawing.Size(75, 23);
       this.doBTN.TabIndex = 11;
@@ -141,11 +143,30 @@ namespace IPChanger {
       this.doBTN.UseVisualStyleBackColor = true;
       this.doBTN.Click += new System.EventHandler(this.doBTN_Click);
       // 
+      // label6
+      // 
+      this.label6.AutoSize = true;
+      this.label6.Location = new System.Drawing.Point(11, 98);
+      this.label6.Name = "label6";
+      this.label6.Size = new System.Drawing.Size(74, 15);
+      this.label6.TabIndex = 13;
+      this.label6.Text = "subnet mask";
+      // 
+      // subnetTB
+      // 
+      this.subnetTB.Location = new System.Drawing.Point(87, 95);
+      this.subnetTB.Name = "subnetTB";
+      this.subnetTB.Size = new System.Drawing.Size(219, 23);
+      this.subnetTB.TabIndex = 12;
+      this.subnetTB.Text = "255.255.255.0";
+      // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(373, 226);
+      this.ClientSize = new System.Drawing.Size(348, 256);
+      this.Controls.Add(this.label6);
+      this.Controls.Add(this.subnetTB);
       this.Controls.Add(this.doBTN);
       this.Controls.Add(this.label5);
       this.Controls.Add(this.dns2TB);
@@ -179,6 +200,8 @@ namespace IPChanger {
     private System.Windows.Forms.Label label5;
     private System.Windows.Forms.TextBox dns2TB;
     private System.Windows.Forms.Button doBTN;
+    private System.Windows.Forms.Label label6;
+    private System.Windows.Forms.TextBox subnetTB;
   }
 }
 
