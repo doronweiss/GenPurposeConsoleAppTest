@@ -55,27 +55,50 @@ namespace IPChanger {
       //   }
       // }
       //return false;
-      object res;
-      if (isDHCP)
-        res = nic.InvokeMethod("EnableDHCP", null);
-      else {
+      ManagementBaseObject res;
+      uint ret;
+      if (isDHCP) {
+        //res = nic.InvokeMethod("EnableDHCP", null);
+        ret = nic.InvokeMethod("EnableDHCP", null);
+        //ret = (uint) res.Properties["ReturnValue"].Value;
+        if (ret > 1)
+          return false;
+        //PrintProps(res, "EnableDHCP result");
+      } else {
         ManagementBaseObject newIP =
           nic.GetMethodParameters("EnableStatic");
         newIP["IPAddress"] = new string[] { ipAddress };
         newIP["SubnetMask"] = new string[] { subnetMak };
         res = nic.InvokeMethod("EnableStatic", newIP, null);
-        if ((res is int ires) && ires > 1)
+        ret = (uint) res.Properties["ReturnValue"].Value;
+        if (ret > 1)
           return false;
+        //PrintProps(res, "EnableStatic result");
         ManagementBaseObject newGW =
           nic.GetMethodParameters("SetGateways");
         newGW["DefaultIPGateway"] = new string[] { gateway };
         newGW["GatewayCostMetric"] = new int[] { 1 };
         res = nic.InvokeMethod("SetGateways", newGW, null);
-        if ((res is int ires2) && ires2 > 1)
+        ret = (uint) res.Properties["ReturnValue"].Value;
+        if (ret > 1)
           return false;
+        //PrintProps(res, "SetGateways result");
         return true;
       }
       return false;
+    }
+
+    private static void PrintProps(object obj, string title) {
+      System.Diagnostics.Debug.WriteLine("************************");
+      System.Diagnostics.Debug.WriteLine($"Title: {title}");
+      var enumerP = (obj as ManagementBaseObject)?.Properties.GetEnumerator();
+      if (enumerP==null)
+        System.Diagnostics.Debug.WriteLine("Invalid object");
+      while (enumerP.MoveNext()) {
+        dynamic prop = enumerP.Current;
+        System.Diagnostics.Debug.WriteLine($"{prop.Name} = {prop.Value}");
+      }
+      System.Diagnostics.Debug.WriteLine("************************");
     }
   }
 }
