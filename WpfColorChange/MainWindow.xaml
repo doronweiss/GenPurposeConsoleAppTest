@@ -1,0 +1,18 @@
+﻿<Window x:Class="WpfColorChange.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfColorChange"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+  <Grid Margin="0,0,100,69" Background="DeepPink">
+    <Button Content="Load" HorizontalAlignment="Left" Margin="20,24,0,0" VerticalAlignment="Top"
+            Click="OnLoadImage"/>
+    <Border HorizontalAlignment="Left" Height="298" Margin="95,35,0,0" VerticalAlignment="Top" Width="505"
+            BorderBrush="Blue" BorderThickness="3">
+      <Image Name="img"/>
+    </Border>
+
+  </Grid>
+</Window>
