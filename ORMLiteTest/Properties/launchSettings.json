@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ORMLiteTest": {
+      "commandName": "Project",
+      "workingDirectory": "C:\\tries\\CS\\GenPurposeConsoleAppTest\\ORMLiteTest\\run_dir"
+    }
+  }
+}
