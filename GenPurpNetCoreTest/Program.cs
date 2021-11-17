@@ -17,7 +17,8 @@ namespace GenPurpNetCoreTest {
       //FeederPositions.Run();
       //IPAddressIssues.Run();
       //CharsTransfer.Run();
-      StackPrinter.Run();
+      //StackPrinter.Run();
+      GeneralPurposeTests.Run();
     }
   }
 }
