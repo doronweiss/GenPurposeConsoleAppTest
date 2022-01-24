@@ -19,7 +19,8 @@ namespace GenPurpNetCoreTest {
       //CharsTransfer.Run();
       //StackPrinter.Run();
       //GeneralPurposeTests.Run();
-      IComparableTest.Run();
+      //IComparableTest.Run();
+      DynaClassBuilder.Run();
     }
   }
 }
