@@ -20,7 +20,8 @@ namespace GenPurpNetCoreTest {
       //StackPrinter.Run();
       //GeneralPurposeTests.Run();
       //IComparableTest.Run();
-      DynaClassBuilder.Run();
+      //DynaClassBuilder.Run();
+      MultiJSONTest.Run();
     }
   }
 }
