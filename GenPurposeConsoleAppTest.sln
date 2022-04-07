@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SVGViewer", "SVGViewer\SVGV
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ORMLiteTest", "ORMLiteTest\ORMLiteTest.csproj", "{09210463-DA7A-4D0A-8178-B37548215884}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEUtils", "SEUtils\SEUtils.csproj", "{05040B28-B0B2-407A-9696-9E1C71887373}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SEUtils", "SEUtils\SEUtils.csproj", "{05040B28-B0B2-407A-9696-9E1C71887373}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gorillas", "Gorillas\Gorillas.csproj", "{4A9F2020-74CD-4D13-BA35-45A33863F4A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -101,6 +103,14 @@ Global
 		{05040B28-B0B2-407A-9696-9E1C71887373}.Release|Any CPU.Build.0 = Release|Any CPU
 		{05040B28-B0B2-407A-9696-9E1C71887373}.Release|x86.ActiveCfg = Release|Any CPU
 		{05040B28-B0B2-407A-9696-9E1C71887373}.Release|x86.Build.0 = Release|Any CPU
+		{4A9F2020-74CD-4D13-BA35-45A33863F4A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A9F2020-74CD-4D13-BA35-45A33863F4A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A9F2020-74CD-4D13-BA35-45A33863F4A9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4A9F2020-74CD-4D13-BA35-45A33863F4A9}.Debug|x86.Build.0 = Debug|Any CPU
+		{4A9F2020-74CD-4D13-BA35-45A33863F4A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A9F2020-74CD-4D13-BA35-45A33863F4A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A9F2020-74CD-4D13-BA35-45A33863F4A9}.Release|x86.ActiveCfg = Release|Any CPU
+		{4A9F2020-74CD-4D13-BA35-45A33863F4A9}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

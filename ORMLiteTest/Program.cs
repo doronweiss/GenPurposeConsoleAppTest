@@ -47,11 +47,11 @@ namespace ORMLiteTest {
     public static bool UpdateMiscData(int itemKey, object itemValue) {
       // return UpdateMiscData2(itemKey, itemType, itemValue);
       try {
-        using IDbConnection db = Factory.Open();
-        int rows = db.UpdateOnly(new AuxDataStore { itemValue = (DateTime)itemValue },
-          onlyFields: p => p.itemValue,
-          where: x => x.itemKey == (int)itemKey);
-        return rows > 0;
+        // using IDbConnection db = Factory.Open();
+        // int rows = db.UpdateOnly(new AuxDataStore { itemValue = (DateTime)itemValue },
+        //   onlyFields: p => p.itemValue,
+        //   where: x => x.itemKey == (int)itemKey);
+        return true; //rows > 0;
       } catch (Exception ex) {
         return false;
       }
