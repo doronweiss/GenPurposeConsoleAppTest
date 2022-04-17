@@ -14,7 +14,7 @@ namespace Gorillas {
       return sb.ToString();
     }
     public static void Run() {
-      string str = "AAAAAAAAAAAA7O/nKeRiHcyRtUAI/oM=";
+      string str = "";
       byte[] data = Convert.FromBase64String(str);
       Console.WriteLine("Req:");
       Console.WriteLine($"Total of {data.Length} bytes");
