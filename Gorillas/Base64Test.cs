@@ -14,18 +14,18 @@ namespace Gorillas {
       return sb.ToString();
     }
     public static void Run() {
-      string str = "";
+      string str = "AAAAAAAAAAAA0m3b/iJF7a1yuKUsMTs=";
       byte[] data = Convert.FromBase64String(str);
       Console.WriteLine("Req:");
       Console.WriteLine($"Total of {data.Length} bytes");
       Console.WriteLine(Bytes2HexString(data));
       System.Diagnostics.Debug.WriteLine(Bytes2HexString(data));
-      str = "ICO2BUTZ8xCbUf11nr8j5puakdu4lgHSKk9CXsYtst3R";
-      data = Convert.FromBase64String(str);
-      Console.WriteLine("Resp:");
-      Console.WriteLine($"Total of {data.Length} bytes");
-      Console.WriteLine(Bytes2HexString(data));
-      System.Diagnostics.Debug.WriteLine(Bytes2HexString(data));
+      // str = "ICO2BUTZ8xCbUf11nr8j5puakdu4lgHSKk9CXsYtst3R";
+      // data = Convert.FromBase64String(str);
+      // Console.WriteLine("Resp:");
+      // Console.WriteLine($"Total of {data.Length} bytes");
+      // Console.WriteLine(Bytes2HexString(data));
+      // System.Diagnostics.Debug.WriteLine(Bytes2HexString(data));
     }
   }
 }

@@ -18,10 +18,10 @@ namespace GenPurpNetCoreTest {
       //IPAddressIssues.Run();
       //CharsTransfer.Run();
       //StackPrinter.Run();
-      //GeneralPurposeTests.Run();
+      GeneralPurposeTests.Run();
       //IComparableTest.Run();
       //DynaClassBuilder.Run();
-      MultiJSONTest.Run();
+      //MultiJSONTest.Run();
     }
   }
 }
