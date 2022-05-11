@@ -3,7 +3,8 @@
 namespace Gorillas {
   internal class Program {
     static void Main(string[] args) {
-      Base64Test.Run();
+      //Base64Test.Run();
+      MICCalculator.Run();
     }
   }
 }
