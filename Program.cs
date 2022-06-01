@@ -25,7 +25,7 @@ namespace GenPurposeConsoleAppTest {
       //InheritanceTest.Run();
       //BST.Run();
       //MatTest.Run();
-      //CSScriptRT.Run();
+      CSScriptRT.Run();
       //CRCTester.Run();
 
       //Yielder.Run();
@@ -45,7 +45,7 @@ namespace GenPurposeConsoleAppTest {
       //BinWriterTest.Run();
       //UnionTest.Run();
       //Bitvec32Tester.Run();
-      Bitvec16Test.Run();
+      //Bitvec16Test.Run();
       //ArrayTests.Run();
       //UnsafeTest.Run();
       //DestructorTest.Run();
