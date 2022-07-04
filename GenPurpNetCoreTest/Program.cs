@@ -6,7 +6,7 @@ namespace GenPurpNetCoreTest {
       //CS8test.Run();
       //JSONtest.Run();
       //NestedClassTest.Run();
-      //AnonJsonTest.Run();
+      AnonJsonTest.Run();
       //PM8ConfigEncDec.Run();
       //AttributesTest.Run();
       //DupTestClass.Run();
@@ -18,7 +18,7 @@ namespace GenPurpNetCoreTest {
       //IPAddressIssues.Run();
       //CharsTransfer.Run();
       //StackPrinter.Run();
-      GeneralPurposeTests.Run();
+      //GeneralPurposeTests.Run();
       //IComparableTest.Run();
       //DynaClassBuilder.Run();
       //MultiJSONTest.Run();
