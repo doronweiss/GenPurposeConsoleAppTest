@@ -3,4 +3,6 @@
 
 //Airtouch.GenTests.Run();
 //Airtouch.PartialJson.Run();
-Airtouch.RecordTest.Run();
+//Airtouch.RecordTest.Run();
+Airtouch.MyCaller.Run();
+ 
