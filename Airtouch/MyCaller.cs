@@ -40,27 +40,50 @@ namespace Airtouch {
       summer += 1;
     }
 
+    private static string GetLogPoint() {
+      StackTrace stackTrace = new StackTrace();
+      StackFrame sf = stackTrace.GetFrame(1);
+      return $"[{sf.GetMethod().DeclaringType.ToString().Replace(".","][")}][{sf.GetMethod().Name}]";
+    }
+
+    private static string TesterFunc() {
+      return GetLogPoint();
+    }
+
     private static long summer = 0;
     public static void Run() {
       int loops = 1000000;
+      // Stopwatch st = new Stopwatch();
+      // Console.WriteLine("Starting");
+      // st.Start();
+      // for (int idx=0; idx<loops; idx++)
+      //   JustPrint();
+      // st.Stop();
+      // long jpt = st.ElapsedMilliseconds;
+      // Console.WriteLine($"Summer = {summer}");
+      // summer = 0;
+      // st.Reset();
+      // st.Start();
+      // for (int idx=0; idx<loops; idx++)
+      //   JustPrintST();
+      // st.Stop();
+      // Console.WriteLine($"Summer = {summer}");
+      // long stpt = st.ElapsedMilliseconds;
+      // Console.WriteLine($"Elapssed: {jpt} / {stpt}");
+      // Console.WriteLine($"Single op: {jpt * 1000.0 / loops} / {stpt * 1000.0 / loops} [micro sec]");
+
       Stopwatch st = new Stopwatch();
       Console.WriteLine("Starting");
       st.Start();
+      string str="";
       for (int idx=0; idx<loops; idx++)
-        JustPrint();
+        str = TesterFunc();
       st.Stop();
       long jpt = st.ElapsedMilliseconds;
-      Console.WriteLine($"Summer = {summer}");
-      summer = 0;
-      st.Reset();
-      st.Start();
-      for (int idx=0; idx<loops; idx++)
-        JustPrintST();
-      st.Stop();
-      Console.WriteLine($"Summer = {summer}");
-      long stpt = st.ElapsedMilliseconds;
-      Console.WriteLine($"Elapssed: {jpt} / {stpt}");
-      Console.WriteLine($"Single op: {jpt * 1000.0 / loops} / {stpt * 1000.0 / loops} [micro sec]");
+      Console.WriteLine($"str = {str}");
+      Console.WriteLine($"Elapssed: {jpt}");
+      Console.WriteLine($"Single op: {jpt * 1000.0 / loops} [micro sec]");
+
       //func1();
     }
   }
