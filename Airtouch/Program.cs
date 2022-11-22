@@ -4,5 +4,9 @@
 //Airtouch.GenTests.Run();
 //Airtouch.PartialJson.Run();
 //Airtouch.RecordTest.Run();
-Airtouch.MyCaller.Run();
+
+using Airtouch;
+
+//MyCaller.Run();
+SunCalculator.Run();
  
