@@ -12,8 +12,9 @@ module FSFirstLib =
       | _ -> 0
 
     //let GetIDByNum (num : int) : string =
-    //  //let factory =  new ServiceStack.OrmLite.OrmLiteConnectionFactory("c:\Projects\AirTouch\CarMk2.5\run_dir\cardb.db", ServiceStack.OrmLite.SqliteDialect.Provider);
-    //  use db = ServiceStack.OrmLite.Sqlite. OpenDbConnection "c:\Projects\AirTouch\CarMk2.5\run_dir\cardb.db"
-    //  let cprs = db. <RobotPersistentBase>();
+    //  let factory =  new ServiceStack.OrmLite.OrmLiteConnectionFactory("c:\Projects\AirTouch\CarMk2.5\run_dir\cardb.db", ServiceStack.OrmLite.SqliteDialect.Provider);
+    //  let conn = new ServiceStack.OrmLite.OrmLiteConnection( factory)
+    //  conn.
+      
 
     //  "ddd"
