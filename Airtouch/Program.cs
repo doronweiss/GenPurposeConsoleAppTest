@@ -1,12 +1,12 @@
 ﻿// See https://aka.ms/new-console-template for more information
 //Console.WriteLine("Hello, World!");
 
-//Airtouch.GenTests.Run();
-//Airtouch.PartialJson.Run();
-//Airtouch.RecordTest.Run();
 
 using Airtouch;
 
+GenTests.Run();
+//PartialJson.Run();
+//RecordTest.Run();
 //MyCaller.Run();
-SunCalculator.Run();
+//SunCalculator.Run();
  
