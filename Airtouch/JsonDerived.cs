@@ -35,10 +35,16 @@ namespace Airtouch {
 
     public static void Run() {
       Container cnt = new Container();
-      string str = JsonConvert.SerializeObject(cnt);
+      JsonSerializerSettings settings = new JsonSerializerSettings {TypeNameHandling = TypeNameHandling.All};
+      string str = JsonConvert.SerializeObject(cnt, settings);
+      Console.WriteLine("*******************************************************");
       Console.WriteLine(str);
-      Container cnt2 = JsonConvert.DeserializeObject<Container>(str);
+      Console.WriteLine("*******************************************************");
+      Container cnt2 = JsonConvert.DeserializeObject<Container>(str, settings);
       Console.WriteLine(JsonConvert.SerializeObject(cnt2));
+      Console.WriteLine("*******************************************************");
+      Console.WriteLine(JsonConvert.SerializeObject(cnt2, settings));
+      Console.WriteLine("*******************************************************");
     }
   }
 }
