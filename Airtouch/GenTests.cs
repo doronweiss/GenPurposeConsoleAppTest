@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,11 +36,16 @@ namespace Airtouch {
       // DemoCls dc2 = dc1 with {j = 4};
       // Console.WriteLine($"dc1: {dc2}");
 
-      EnTest ent = new EnTest();
-      foreach (int i in ent.GetEnumerator())
-        Console.WriteLine($"val={i}");
-      foreach (int i in ent.GetEnumerator())
-        Console.WriteLine($"val={i}");
+      // EnTest ent = new EnTest();
+      // foreach (int i in ent.GetEnumerator())
+      //   Console.WriteLine($"val={i}");
+      // foreach (int i in ent.GetEnumerator())
+      //   Console.WriteLine($"val={i}");
+
+      string str = "2022-12-14 14:31:28.4744"; //4|DEBUG|main|Car Started 12/14/2022 2:31:28 PM |";
+      CultureInfo provider = CultureInfo.InvariantCulture;
+      DateTime dt = DateTime.ParseExact(str, "yyyy-MM-dd HH:mm:ss.ffff", provider);
+      Console.WriteLine(dt);
     }
   }
 }

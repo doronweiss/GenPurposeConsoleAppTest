@@ -4,10 +4,10 @@
 
 using Airtouch;
 
-//GenTests.Run();
+GenTests.Run();
 //PartialJson.Run();
 //RecordTest.Run();
 //MyCaller.Run();
 //SunCalculator.Run();
-JsonDerived.Run();
+//JsonDerived.Run();
  
