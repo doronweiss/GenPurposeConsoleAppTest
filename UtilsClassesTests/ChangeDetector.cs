@@ -29,7 +29,7 @@ namespace UtilsClassesTests {
 
   internal class PLCMultiBool {
     private int dataSize = 16;
-    private List<PLCBool> plcBools = default;
+    protected List<PLCBool> plcBools = default;
 
     public PLCMultiBool(int dataSize, bool initValue) {
       this.dataSize = dataSize;
@@ -52,6 +52,31 @@ namespace UtilsClassesTests {
     public bool IsFall => plcBools.Any(x => x.IsFall);
 
     public bool Changed => IsRise || IsFall;
+
+    public static implicit operator bool(PLCMultiBool b) => 
+      b.plcBools.Any(x => (bool)x);
+
+    #region index data
+    public int WhoRose() =>
+      plcBools.FindIndex(x => x.IsRise);
+
+    public int WhoFell() =>
+      plcBools.FindIndex(x => x.IsFall);
+    #endregion index data
+  }
+
+  internal class PLCMultiBoolE<T> : PLCMultiBool where T : Enum {
+    public PLCMultiBoolE(bool initValue) : base(Enum.GetValues(typeof(T)).Length, initValue) { }
+
+    public PLCBoolValues Set(T position, bool value) =>
+      Set((int)(ValueType)position, value);
+
+    public T WhoRose() =>
+      (T)(ValueType)plcBools.FindIndex(x => x.IsRise);
+
+    public T WhoFell() =>
+      (T)(ValueType)plcBools.FindIndex(x => x.IsFall);
+
 
   }
 }
