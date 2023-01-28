@@ -25,19 +25,21 @@ namespace MatLib {
     static void Main(string[] args) {
       PLCMultiBoolE<EN> pm = new PLCMultiBoolE<EN>(false);
       pm.Set(EN.t1, true);
-      Console.WriteLine($"Pm:{(bool)pm} isRise: {pm.IsRise}, isFall: {pm.IsFall}, rose:{pm.WhoRose()},fell: {pm.WhoFell()} ");
+      Console.WriteLine($"Pm:{(bool)pm} isRise: {pm.IsRise}, isFall: {pm.IsFall}, rose:{pm.WhoRose()},fell: {pm.WhoFell()}, true: {pm.WhoTrue()} ");
       pm.Set(EN.t1, true);
       pm.Set(EN.t4, true);
-      Console.WriteLine($"Pm:{(bool)pm} isRise: {pm.IsRise}, isFall: {pm.IsFall}, rose:{pm.WhoRose()},fell: {pm.WhoFell()} ");
+      Console.WriteLine($"Pm:{(bool) pm} isRise: {pm.IsRise}, isFall: {pm.IsFall}, rose:{pm.WhoRose()},fell: {pm.WhoFell()}, true: {pm.WhoTrue()} ");
       pm.Set(EN.t1, false);
-      Console.WriteLine($"Pm:{(bool)pm} isRise: {pm.IsRise}, isFall: {pm.IsFall}, rose:{pm.WhoRose()},fell: {pm.WhoFell()} ");
+      Console.WriteLine($"Pm:{(bool) pm} isRise: {pm.IsRise}, isFall: {pm.IsFall}, rose:{pm.WhoRose()},fell: {pm.WhoFell()}, true: {pm.WhoTrue()} ");
+      pm.Set(EN.t1, false);
       pm.Set(EN.t4, true);
-      Console.WriteLine($"Pm:{(bool)pm} isRise: {pm.IsRise}, isFall: {pm.IsFall}, rose:{pm.WhoRose()},fell: {pm.WhoFell()} ");
-      pm.Set(EN.t1, false);
+      Console.WriteLine($"Pm:{(bool) pm} isRise: {pm.IsRise}, isFall: {pm.IsFall}, rose:{pm.WhoRose()},fell: {pm.WhoFell()}, true: {pm.WhoTrue()} ");
+      pm.Set(EN.t4, true);
+      Console.WriteLine($"Pm:{(bool) pm} isRise: {pm.IsRise}, isFall: {pm.IsFall}, rose:{pm.WhoRose()},fell: {pm.WhoFell()}, true: {pm.WhoTrue()} ");
       pm.Set(EN.t4, false);
-      Console.WriteLine($"Pm:{(bool)pm} isRise: {pm.IsRise}, isFall: {pm.IsFall}, rose:{pm.WhoRose()},fell: {pm.WhoFell()} ");
+      Console.WriteLine($"Pm:{(bool) pm} isRise: {pm.IsRise}, isFall: {pm.IsFall}, rose:{pm.WhoRose()},fell: {pm.WhoFell()}, true: {pm.WhoTrue()} ");
       pm.Set(EN.t4, false);
-      Console.WriteLine($"Pm:{(bool)pm} rose:{pm.WhoRose()},fell: {pm.WhoFell()} ");
+      Console.WriteLine($"Pm:{(bool) pm} isRise: {pm.IsRise}, isFall: {pm.IsFall}, rose:{pm.WhoRose()},fell: {pm.WhoFell()}, true: {pm.WhoTrue()} ");
     }
   }
 }
