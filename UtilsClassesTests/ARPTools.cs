@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
@@ -14,7 +15,7 @@ using System.Threading.Tasks;
 namespace UtilsClassesTests {
   internal class ARPTools {
     [DllImport("iphlpapi.dll", ExactSpelling = true)]
-    [SecurityCritical]
+    //[SecurityCritical]
     private static extern int SendARP(int destinationIp, int sourceIp, byte[] macAddress, ref int physicalAddrLength);
 
     private static (IPAddress, PhysicalAddress) Lookup(IPAddress ip) {
@@ -30,19 +31,25 @@ namespace UtilsClassesTests {
     }
 
     public static async void Run() {
+      Stopwatch sw = new Stopwatch();
       List<Task<(IPAddress, PhysicalAddress)>> tasks = new ();
+      sw.Start();
       for (int idx = 0; idx < 255; idx++) {
         IPAddress ip = new IPAddress(new byte[] { 192, 168, 0, (byte)idx });
-        //Task<(IPAddress, PhysicalAddress)> pa = Task.Run(() => Lookup(ip));
-        Task<(IPAddress, PhysicalAddress)> pa = Task.Factory.StartNew(() => Lookup(ip));
+        Task<(IPAddress, PhysicalAddress)> pa = Task.Run(() => Lookup(ip));
+        //Task<(IPAddress, PhysicalAddress)> pa = Task.Factory.StartNew(() => Lookup(ip));
         tasks.Add(pa);
         Console.WriteLine($"Started task {idx}");
       }
       Task.WaitAll(tasks.ToArray());
+      sw.Stop();
       foreach (Task<(IPAddress, PhysicalAddress)> tres in tasks) {
         (IPAddress, PhysicalAddress) tt = tres.Result;
         Console.WriteLine($"Address: {tt.Item1} physical address: {tt.Item2}");
       }
+      Console.WriteLine("*************************************");
+      Console.WriteLine($"Total time: {sw.ElapsedMilliseconds} [ms]");
+      Console.WriteLine("*************************************");
     }
   }
 }
