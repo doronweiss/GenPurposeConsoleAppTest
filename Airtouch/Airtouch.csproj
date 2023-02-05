@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+    <PackageReference Include="SunCalcNet" Version="1.2.2" />
   </ItemGroup>
 
 </Project>

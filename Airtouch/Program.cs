@@ -10,5 +10,6 @@ using Airtouch;
 //MyCaller.Run();
 //SunCalculator.Run();
 //JsonDerived.Run();
-JsonPLCConfig.Run();
+//JsonPLCConfig.Run();
+TestSunCalcNet.Run();
  
