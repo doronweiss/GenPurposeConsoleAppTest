@@ -7,9 +7,13 @@ module FSFirstLib =
 
 
     let rec SumF2 (l : List<int>)=
-      match l with
-      | h::t -> h + (SumF2 t)
-      | _ -> 0
+      List.sum l
+      //match l with
+      //| h::t -> h + (SumF2 t)
+      //| _ -> 0
+
+    let rec SumF2Seq (l : seq<int>)=
+      Seq.sum l
 
     //let GetIDByNum (num : int) : string =
     //  let factory =  new ServiceStack.OrmLite.OrmLiteConnectionFactory("c:\Projects\AirTouch\CarMk2.5\run_dir\cardb.db", ServiceStack.OrmLite.SqliteDialect.Provider);
