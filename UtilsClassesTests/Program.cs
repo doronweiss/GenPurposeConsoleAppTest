@@ -41,7 +41,8 @@ namespace MatLib {
       // pm.Set(EN.t4, false);
       // Console.WriteLine($"Pm:{(bool) pm} isRise: {pm.IsRise}, isFall: {pm.IsFall}, rose:{pm.WhoRose()},fell: {pm.WhoFell()}, true: {pm.WhoTrue()} ");
 
-      ARPTools.Run();
+      //ARPTools.Run();
+      CallChecker.Run();
     
     }
   }
