@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Threading;
@@ -7,17 +8,32 @@ using ServiceStack.OrmLite;
 
 namespace ORMLiteTest {
 
-  public class AuxDataStore {
+  public enum RowStateEnum {
+    pending,
+    cleaning,
+    cleaned,
+    abandond
+  };
+
+  public class RowData {
     public const string DatetimeFormat = "MM/dd/yy HH:mm:ss";
     [AutoIncrement]
     [PrimaryKey]
     [Required]
     public int id { set; get; }
     [Required]
-    public int itemKey { set; get; } = 0;
+    public int rowNum { get; set; }
     [Required]
-    [StringLength(100)]
-    public object itemValue { set; get; }
+    public RowStateEnum _rowState { set; get; } = 0;
+    public int abandonCount = 0;
+    [Ignore]
+    public RowStateEnum rowState {
+      get => _rowState;
+      set {
+        abandonCount = value == RowStateEnum.abandond ? abandonCount + 1 : 0;
+        _rowState = value;
+      }
+    }
   }
 
 
@@ -29,13 +45,13 @@ namespace ORMLiteTest {
       try {
         using IDbConnection db = Factory.Open();
         // misc data
-        if (!db.TableExists<AuxDataStore>()) {
-          db.CreateTable<AuxDataStore>();
-          db.Insert<AuxDataStore>(new AuxDataStore() {
-            itemKey = 0, itemValue = DateTime.Now
+        if (!db.TableExists<RowData>()) {
+          db.CreateTable<RowData>();
+          db.Insert<RowData>(new RowData() {
+            rowNum = 1, rowState = RowStateEnum.pending
           });
-          db.Insert<AuxDataStore>(new AuxDataStore() {
-            itemKey = 1, itemValue = DateTime.Now
+          db.Insert<RowData>(new RowData() {
+            rowNum = 1, rowState = RowStateEnum.pending
           });
         }
         return true;
@@ -44,22 +60,9 @@ namespace ORMLiteTest {
       }
     }
 
-    public static bool UpdateMiscData(int itemKey, object itemValue) {
-      // return UpdateMiscData2(itemKey, itemType, itemValue);
-      try {
-        // using IDbConnection db = Factory.Open();
-        // int rows = db.UpdateOnly(new AuxDataStore { itemValue = (DateTime)itemValue },
-        //   onlyFields: p => p.itemValue,
-        //   where: x => x.itemKey == (int)itemKey);
-        return true; //rows > 0;
-      } catch (Exception ex) {
-        return false;
-      }
-    }
-
 
     public static bool InitConnectionFactory() {
-      string connStr = Path.Combine(Directory.GetCurrentDirectory(), "polytexdb.db");
+      string connStr = Path.Combine(Directory.GetCurrentDirectory(), "rowsdatabase.db");
       connFact = new OrmLiteConnectionFactory(connStr, SqliteDialect.Provider);
       if (!EnsureDBExists()) {
         if (File.Exists(connStr)) {
@@ -76,18 +79,49 @@ namespace ORMLiteTest {
       return true;
     }
 
-    DateTime GetData(int index) {
-      return DateTime.Now;
+    public static List<RowData> LoadRows (){
+      try {
+        try {
+          using IDbConnection db = Factory.Open();
+          List<RowData> cprs = db.Select<RowData>();
+          return cprs;
+        } catch {
+          return null;
+        }
+      } catch (Exception ex) {
+        return null;
+      }
+    }
+
+    public static bool SaveRows(List<RowData> plan) {
+      try {
+        using IDbConnection db = Factory.Open();
+        // delete existing data
+        db.DeleteAll<RowData>();
+        // save new rows
+        db.SaveAll<RowData>(plan);
+      } catch (Exception ex) {
+        return false;
+      }
+      return true;
     }
 
 
     static void Main(string[] args) {
+      List<RowData> rows;
       if (!InitConnectionFactory())
         return;
       if (!EnsureDBExists())
         return;
-      Thread.Sleep(1000);
-      UpdateMiscData(0, DateTime.Now);
+      rows = LoadRows();
+      if (rows == null) {
+        Console.WriteLine("load => NULL");
+        return;
+      }
+      rows[0].rowState = RowStateEnum.abandond;
+      rows[0].rowState = RowStateEnum.abandond;
+      SaveRows(rows);
+      rows = LoadRows();
       Console.WriteLine("Hello World!");
     }
   }
