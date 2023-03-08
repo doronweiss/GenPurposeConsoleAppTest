@@ -31,7 +31,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TesterApp", "FSharp\TesterA
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "FSFirstLib", "FSharp\FSFirstLib\FSFirstLib.fsproj", "{71B77D99-EE63-4CCD-9B0A-79C792950BAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilsClassesTests", "UtilsClassesTests\UtilsClassesTests.csproj", "{CF1F6BF0-48C4-410C-BDE1-338CA9371F79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UtilsClassesTests", "UtilsClassesTests\UtilsClassesTests.csproj", "{CF1F6BF0-48C4-410C-BDE1-338CA9371F79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polytex", "Polytex\Polytex.csproj", "{EB5900BF-27BB-4993-8EC1-1F32FBC1329E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -153,6 +155,14 @@ Global
 		{CF1F6BF0-48C4-410C-BDE1-338CA9371F79}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CF1F6BF0-48C4-410C-BDE1-338CA9371F79}.Release|x86.ActiveCfg = Release|Any CPU
 		{CF1F6BF0-48C4-410C-BDE1-338CA9371F79}.Release|x86.Build.0 = Release|Any CPU
+		{EB5900BF-27BB-4993-8EC1-1F32FBC1329E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB5900BF-27BB-4993-8EC1-1F32FBC1329E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB5900BF-27BB-4993-8EC1-1F32FBC1329E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EB5900BF-27BB-4993-8EC1-1F32FBC1329E}.Debug|x86.Build.0 = Debug|Any CPU
+		{EB5900BF-27BB-4993-8EC1-1F32FBC1329E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB5900BF-27BB-4993-8EC1-1F32FBC1329E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB5900BF-27BB-4993-8EC1-1F32FBC1329E}.Release|x86.ActiveCfg = Release|Any CPU
+		{EB5900BF-27BB-4993-8EC1-1F32FBC1329E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
