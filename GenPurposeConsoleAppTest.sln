@@ -33,7 +33,9 @@ Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "FSFirstLib", "FSharp\FSFirs
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UtilsClassesTests", "UtilsClassesTests\UtilsClassesTests.csproj", "{CF1F6BF0-48C4-410C-BDE1-338CA9371F79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polytex", "Polytex\Polytex.csproj", "{EB5900BF-27BB-4993-8EC1-1F32FBC1329E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Polytex", "Polytex\Polytex.csproj", "{EB5900BF-27BB-4993-8EC1-1F32FBC1329E}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SQLiteTest", "FSharp\SQLiteTest\SQLiteTest.fsproj", "{07A85479-0246-4DEC-B850-BE8BA3ECD526}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -163,6 +165,14 @@ Global
 		{EB5900BF-27BB-4993-8EC1-1F32FBC1329E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EB5900BF-27BB-4993-8EC1-1F32FBC1329E}.Release|x86.ActiveCfg = Release|Any CPU
 		{EB5900BF-27BB-4993-8EC1-1F32FBC1329E}.Release|x86.Build.0 = Release|Any CPU
+		{07A85479-0246-4DEC-B850-BE8BA3ECD526}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07A85479-0246-4DEC-B850-BE8BA3ECD526}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07A85479-0246-4DEC-B850-BE8BA3ECD526}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{07A85479-0246-4DEC-B850-BE8BA3ECD526}.Debug|x86.Build.0 = Debug|Any CPU
+		{07A85479-0246-4DEC-B850-BE8BA3ECD526}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07A85479-0246-4DEC-B850-BE8BA3ECD526}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07A85479-0246-4DEC-B850-BE8BA3ECD526}.Release|x86.ActiveCfg = Release|Any CPU
+		{07A85479-0246-4DEC-B850-BE8BA3ECD526}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -170,6 +180,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{4BACD916-C53F-47A8-AA07-0B070E1629AF} = {5D322499-D1B2-4F67-A07F-D0657F37D48B}
 		{71B77D99-EE63-4CCD-9B0A-79C792950BAE} = {5D322499-D1B2-4F67-A07F-D0657F37D48B}
+		{07A85479-0246-4DEC-B850-BE8BA3ECD526} = {5D322499-D1B2-4F67-A07F-D0657F37D48B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1EF262FD-9E0F-4F91-96D4-C208F3AB6D92}
