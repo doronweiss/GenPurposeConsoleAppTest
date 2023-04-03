@@ -22,7 +22,10 @@ namespace GenPurposeConsoleAppTest {
       }
     }
 
-
+    public static string Bytes2String(byte[] bytes, bool isBigEndian) {
+      byte[] workBytes = !isBigEndian ? bytes : bytes.Reverse().ToArray();
+      return BitConverter.ToString(workBytes).Replace("-", "");
+    }
 
     public static unsafe string PrintBytes(MyUnion mu) {
       string str = $"{mu.bts[0]:X2},{mu.bts[1]:X2},{mu.bts[2]:X2},{mu.bts[3]:X2},{mu.bts[4]:X2},{mu.bts[5]:X2},{mu.bts[6]:X2},{mu.bts[7]:X2},{mu.bts[8]:X2},{mu.bts[9]:X2},{mu.bts[10]:X2},{mu.bts[11]:X2},{mu.bts[12]:X2},{mu.bts[13]:X2},{mu.bts[14]:X2},{mu.bts[15]:X2}";
@@ -37,6 +40,7 @@ namespace GenPurposeConsoleAppTest {
       mu.i4 = 4;
       Console.WriteLine($"Ints: {mu.i1}, {mu.i2}, {mu.i3}, {mu.i4}");
       Console.WriteLine(PrintBytes(mu));
+      Console.WriteLine(Bytes2String(mu.bts, false));
     }
   }
 }
