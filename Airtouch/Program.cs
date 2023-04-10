@@ -11,5 +11,6 @@ using Airtouch;
 //SunCalculator.Run();
 //JsonDerived.Run();
 //JsonPLCConfig.Run();
-TestSunCalcNet.Run();
+//TestSunCalcNet.Run();
+CompareByPatternTest.Run();
  
