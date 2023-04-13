@@ -40,7 +40,7 @@ namespace GenPurposeConsoleAppTest {
       mu.i4 = 4;
       Console.WriteLine($"Ints: {mu.i1}, {mu.i2}, {mu.i3}, {mu.i4}");
       Console.WriteLine(PrintBytes(mu));
-      Console.WriteLine(Bytes2String(mu.bts, false));
+      //Console.WriteLine(Bytes2String(mu.bts, false));
     }
   }
 }
