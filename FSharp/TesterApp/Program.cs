@@ -10,7 +10,9 @@ static int MySum2(List<int> lst) => lst[0] + lst[1];
 //Console.WriteLine($"Max = {d}");
 
 List<int> lst = new List<int>() { 1, 2, 3, 4, 5 };
-int str = FSFirstLib.FSFirstLib.SumF2Seq(lst);
+int ival = FSFirstLib.FSFirstLib.SumF2Seq(lst);
+ival = FSFirstLib.FSFirstLib.SumF2(ListModule.OfSeq(lst));
+Console.WriteLine($"Sum: {ival}");
 // Console.WriteLine($"lst sum =  {FSFirstLib.FSFirstLib.SumF2Seq(lst)}");
 
 //int loops = 1000000, sum=0;
@@ -30,8 +32,11 @@ int str = FSFirstLib.FSFirstLib.SumF2Seq(lst);
 //fpt = st.ElapsedMilliseconds;
 //Console.WriteLine($"LIST:   Elapssed: {fpt}, per op: {fpt * 1.0 / loops}m sum: {sum}");
 
-FSFirstLib.FSFirstLib.Person pers = new FSFirstLib.FSFirstLib.Person("moshe", "levi", DateTime.Now);
+string dateInput = "Jan 1, 2009";
+var parsedDate = DateTime.Parse(dateInput);
+FSFirstLib.FSFirstLib.Person pers = new FSFirstLib.FSFirstLib.Person("moshe", "levi", parsedDate);
 Console.WriteLine(pers.FullName);
+Console.WriteLine(pers.Detailrs);
 
 
 
