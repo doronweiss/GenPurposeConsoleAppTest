@@ -16,12 +16,12 @@ namespace Airtouch {
 
   internal class Permutator<T> {
 
-    public static IList<IList<T>> Permute(T[] nums) {
+    public static IList<IList<T>> Permute(IList<T> nums) {
       var list = new List<IList<T>>();
-      return DoPermute(nums, 0, nums.Length - 1, list);
+      return DoPermute(nums, 0, nums.Count - 1, list);
     }
 
-    static IList<IList<T>> DoPermute(T[] nums, int start, int end, IList<IList<T>> list) {
+    static IList<IList<T>> DoPermute(IList<T> nums, int start, int end, IList<IList<T>> list) {
       if (start == end) {
         // We have one of our possible n! solutions,
         // add it to the list.
