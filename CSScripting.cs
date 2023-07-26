@@ -104,7 +104,7 @@ namespace GenPurposeConsoleAppTest {
         Console.WriteLine("CS\t\t\tcount: {0}, , Sum: {2},  time : {1}, op-time: {3}", count, sw.ElapsedMilliseconds, sum, sw.ElapsedMilliseconds * 1.0 / count);
         #endregion
       } catch (Exception e) {
-        Console.WriteLine("Expception: {0}", e.Message);
+        Console.WriteLine($"Expception: {e.Message}");
         var d = LuaExceptionData.GetData(e); // get stack trace
         Console.WriteLine("StackTrace: {0}", d.FormatStackTrace(0, false));
       }
