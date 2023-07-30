@@ -56,6 +56,7 @@ namespace Loggers {
       string logFName = $"logs/{dt.Year:D4}{dt.Month:D2}{dt.Day:D2} {dt.Hour:D2}{dt.Minute:D2}{dt.Second:D2}.log";
       logFName = Path.Combine(Directory.GetCurrentDirectory(), logFName);
       var config = new NLog.Config.LoggingConfiguration();
+      config.Variables["basedir"] = Path.Combine(Directory.GetCurrentDirectory(), "logs");
       Target logfile = new FileTarget() {
         ArchiveEvery = FileArchivePeriod.Minute,
         ArchiveFileName = $"{Directory.GetCurrentDirectory()}/logs/" + "log.{#}.log",
@@ -63,7 +64,8 @@ namespace Loggers {
         ArchiveDateFormat = "yyyyMMdd HHmmss",
         MaxArchiveDays = 15,
         AutoFlush = true,
-        FileName = $"{Directory.GetCurrentDirectory()}/logs/CurrentLog.log",
+        //FileName = $"{Directory.GetCurrentDirectory()}/logs/${{date:format=yyyy-MM-dd_HHmmss}}.log",
+        FileName = $"{Directory.GetCurrentDirectory()}/logs/current ${{shortdate}}.log",
         Name = "file"
       };
       config.AddRule(LogLevel.Debug, LogLevel.Fatal, logfile);
