@@ -6,7 +6,7 @@ namespace GenPurpNetCoreTest {
       //CS8test.Run();
       //JSONtest.Run();
       //NestedClassTest.Run();
-      AnonJsonTest.Run();
+      //AnonJsonTest.Run();
       //PM8ConfigEncDec.Run();
       //AttributesTest.Run();
       //DupTestClass.Run();
@@ -22,6 +22,7 @@ namespace GenPurpNetCoreTest {
       //IComparableTest.Run();
       //DynaClassBuilder.Run();
       //MultiJSONTest.Run();
+      Attributes.Run();
     }
   }
 }
