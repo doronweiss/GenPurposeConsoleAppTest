@@ -11,7 +11,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="ServiceStack.OrmLite.Sqlite.Data" Version="6.4.0" />
+    <PackageReference Include="ServiceStack.OrmLite.Sqlite.Data" Version="8.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="FSharp.Core" Version="8.0.300" />
   </ItemGroup>
 
 </Project>
