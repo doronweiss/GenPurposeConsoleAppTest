@@ -35,7 +35,9 @@ Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "SQLiteTest", "FSharp\SQLite
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "GenTests", "FSharp\GenTests\GenTests.fsproj", "{9B0C797D-2E36-49BF-AA79-5E55A3C1AB45}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mitras2024", "Mitras2024\Mitras2024.csproj", "{B36018F9-41F4-4178-92A7-4D991B4EB1E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mitras2024", "Mitras2024\Mitras2024.csproj", "{B36018F9-41F4-4178-92A7-4D991B4EB1E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iard", "Iard\Iard.csproj", "{E92FD15E-0C34-4288-9427-6352E368E43B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -173,6 +175,14 @@ Global
 		{B36018F9-41F4-4178-92A7-4D991B4EB1E7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B36018F9-41F4-4178-92A7-4D991B4EB1E7}.Release|x86.ActiveCfg = Release|Any CPU
 		{B36018F9-41F4-4178-92A7-4D991B4EB1E7}.Release|x86.Build.0 = Release|Any CPU
+		{E92FD15E-0C34-4288-9427-6352E368E43B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E92FD15E-0C34-4288-9427-6352E368E43B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E92FD15E-0C34-4288-9427-6352E368E43B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E92FD15E-0C34-4288-9427-6352E368E43B}.Debug|x86.Build.0 = Debug|Any CPU
+		{E92FD15E-0C34-4288-9427-6352E368E43B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E92FD15E-0C34-4288-9427-6352E368E43B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E92FD15E-0C34-4288-9427-6352E368E43B}.Release|x86.ActiveCfg = Release|Any CPU
+		{E92FD15E-0C34-4288-9427-6352E368E43B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
