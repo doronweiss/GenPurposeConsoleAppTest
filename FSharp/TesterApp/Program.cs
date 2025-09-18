@@ -13,8 +13,8 @@ List<int> lst = new List<int>() { 1, 2, 3, 4, 5 };
 int ival = FSFirstLib.FSFirstLib.SumF2Seq(lst);
 ival = FSFirstLib.FSFirstLib.SumF2(ListModule.OfSeq(lst));
 Console.WriteLine($"Sum: {ival}");
-// Console.WriteLine($"lst sum =  {FSFirstLib.FSFirstLib.SumF2Seq(lst)}");
 
+// Console.WriteLine($"lst sum =  {FSFirstLib.FSFirstLib.SumF2Seq(lst)}");
 //int loops = 1000000, sum=0;
 //Stopwatch st = new Stopwatch();
 //Console.WriteLine("Starting");

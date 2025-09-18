@@ -37,10 +37,12 @@ let findfs theList theNum =
                  
 let sourceList = [1..10]
 let mutable tgt = 4
+printfn "tgt: %d" tgt 
 printfn "SourceList = %A\r\n" sourceList 
 findANumberInAList sourceList tgt
 let f1 = findfs  sourceList tgt
 printfn "Found %A in source list at index %A" tgt f1
 tgt <- 11
+printfn "tgt: %d" tgt 
 let f2 = findfs  sourceList tgt
 printfn "Found %A in source list at index %A" tgt f2
