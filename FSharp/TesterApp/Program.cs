@@ -9,28 +9,29 @@ static int MySum2(List<int> lst) => lst[0] + lst[1];
 //double d = FSFirstLib.FSFirstLib.MyMax(1.2, 3.4);
 //Console.WriteLine($"Max = {d}");
 
-List<int> lst = new List<int>() { 1, 2, 3, 4, 5 };
+List<int> lst = new List<int>();
+lst.AddRange(Enumerable.Range(0,500));
 int ival = FSFirstLib.FSFirstLib.SumF2Seq(lst);
 ival = FSFirstLib.FSFirstLib.SumF2(ListModule.OfSeq(lst));
 Console.WriteLine($"Sum: {ival}");
 
-// Console.WriteLine($"lst sum =  {FSFirstLib.FSFirstLib.SumF2Seq(lst)}");
-//int loops = 1000000, sum=0;
-//Stopwatch st = new Stopwatch();
-//Console.WriteLine("Starting");
-//st.Start();
-// for (int idx = 0; idx < loops; idx++)
-//  sum = FSFirstLib.FSFirstLib.SumF2Seq(lst);
-//st.Stop();
-//long fpt = st.ElapsedMilliseconds;
-//Console.WriteLine($"SEQ:   Elapssed: {fpt}, per op: {fpt * 1.0 / loops}m sum: {sum}");
-//st.Reset();
-//st.Start();
-// for (int idx = 0; idx < loops; idx++)
-//  sum = FSFirstLib.FSFirstLib.SumF2(ListModule.OfSeq(lst));
-//st.Stop();
-//fpt = st.ElapsedMilliseconds;
-//Console.WriteLine($"LIST:   Elapssed: {fpt}, per op: {fpt * 1.0 / loops}m sum: {sum}");
+Console.WriteLine($"lst sum =  {FSFirstLib.FSFirstLib.SumF2Seq(lst)}");
+int loops = 1000000, sum = 0;
+Console.WriteLine($"Starting {loops} loops");
+Stopwatch st = new Stopwatch();
+st.Start();
+for (int idx = 0; idx < loops; idx++)
+  sum = FSFirstLib.FSFirstLib.SumF2Seq(lst);
+st.Stop();
+long fpt = st.ElapsedMilliseconds;
+Console.WriteLine($"SEQ:   Elapssed: {fpt}, per op: {fpt * 1.0 / loops}m sum: {sum}");
+st.Reset();
+st.Start();
+for (int idx = 0; idx < loops; idx++)
+  sum = FSFirstLib.FSFirstLib.SumF2(ListModule.OfSeq(lst));
+st.Stop();
+fpt = st.ElapsedMilliseconds;
+Console.WriteLine($"LIST:   Elapssed: {fpt}, per op: {fpt * 1.0 / loops}m sum: {sum}");
 
 string dateInput = "Jan 1, 2009";
 var parsedDate = DateTime.Parse(dateInput);

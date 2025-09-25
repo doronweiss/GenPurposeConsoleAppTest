@@ -27,11 +27,3 @@ module FSFirstLib =
 
     let SumF2Seq (l : seq<int>)=
       Seq.sum l
-
-    //let GetIDByNum (num : int) : string =
-    //  let factory =  new ServiceStack.OrmLite.OrmLiteConnectionFactory("c:\Projects\AirTouch\CarMk2.5\run_dir\cardb.db", ServiceStack.OrmLite.SqliteDialect.Provider);
-    //  let conn = new ServiceStack.OrmLite.OrmLiteConnection( factory)
-    //  conn.
-      
-
-    //  "ddd"
