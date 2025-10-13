@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "SQLiteTest": {
-      "commandName": "Project",
-      "workingDirectory": "run_dir"
-    }
-  }
-}
